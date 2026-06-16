@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Denver Neighborhoods | Emily Chaney Real Estate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    .neighborhood-feature { display: grid; grid-template-columns: 1fr 1fr; min-height: 520px; }
+    .neighborhood-feature.flip { direction: rtl; }
+    .neighborhood-feature.flip > * { direction: ltr; }
+    .nb-photo { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; min-height: 420px; }
+    .nb-content { padding: 72px 64px; display: flex; flex-direction: column; justify-content: center; }
+    .nb-tag { font-size: 10px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; background: var(--red); color: #fff; padding: 4px 12px; display: inline-block; margin-bottom: 20px; }
+    .nb-title { font-size: clamp(40px, 4vw, 60px); font-weight: 300; margin-bottom: 20px; }
+    .nb-title em { font-style: italic; color: var(--red); }
+    .nb-desc { font-size: 16px; line-height: 1.8; color: var(--mid); margin-bottom: 28px; }
+    .nb-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+    .nb-pill { font-size: 11px; font-weight: 500; letter-spacing: .08em; border: 1px solid var(--sand); padding: 6px 14px; color: var(--mid); }
+    .nb-stats { display: flex; gap: 32px; padding-top: 28px; border-top: 1px solid var(--sand); }
+    .nb-stat-val { font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 300; color: var(--dark); line-height: 1; }
+    .nb-stat-label { font-size: 11px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--light); margin-top: 4px; }
+    @media (max-width: 900px) {
+      .neighborhood-feature { grid-template-columns: 1fr; }
+      .neighborhood-feature.flip { direction: ltr; }
+      .nb-photo { min-height: 300px; aspect-ratio: 16/9; height: auto; }
+      .nb-content { padding: 48px 40px; }
+    }
+    @media (max-width: 700px) {
+      .nb-content { padding: 40px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="emily-chaney-website-redesign.html" class="nav-logo"><span class="heart">♥</span><span class="brand">Emily Chaney</span></a>
+  <ul class="nav-links">
+    <li><a href="emily-listings.html">Listings</a></li>
+    <li><a href="emily-meet-emily.html">About</a></li>
+    <li><a href="emily-buyers.html">Buyers</a></li>
+    <li><a href="emily-sellers.html">Sellers</a></li>
+    <li><a href="emily-neighborhoods.html" class="active">Neighborhoods</a></li>
+  </ul>
+  <a href="emily-contact.html" class="nav-cta">Get in Touch</a>
+</nav>
+
+<div class="page-hero">
+  <p class="section-eyebrow">Explore Denver</p>
+  <h1>Find Your<br /><em>Neighborhood</em></h1>
+  <p>Every Denver neighborhood has its own personality, pace, and price point. Here's my local take on the areas I know and love best.</p>
+</div>
+
+<!-- CHERRY CREEK -->
+<div id="cherry-creek" class="neighborhood-feature">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/CherryCreekAF.jpg/960px-CherryCreekAF.jpg" alt="Cherry Creek Denver" class="nb-photo" />
+  <div class="nb-content">
+    <span class="nb-tag" style="background:var(--red);">Cherry Creek</span>
+    <h2 class="nb-title">Upscale living,<br /><em>walkable luxury</em></h2>
+    <p class="nb-desc">Cherry Creek is Denver's premier shopping and dining district. Tree-lined streets, independent boutiques, world-class restaurants, and some of the city's most sought-after real estate — all without leaving the neighborhood. It's urban walkability at its most polished.</p>
+    <div class="nb-tags">
+      <span class="nb-pill">High-end shopping</span>
+      <span class="nb-pill">Restaurant row</span>
+      <span class="nb-pill">Cherry Creek Trail</span>
+      <span class="nb-pill">Arts district</span>
+      <span class="nb-pill">Walkable</span>
+    </div>
+    <div class="nb-stats">
+      <div><div class="nb-stat-val">$750K+</div><div class="nb-stat-label">Median Price</div></div>
+      <div><div class="nb-stat-val">92</div><div class="nb-stat-label">Walk Score</div></div>
+    </div>
+    <div style="margin-top:32px;"><a href="emily-listings.html" class="btn-primary">View Cherry Creek Listings</a></div>
+  </div>
+</div>
+
+<!-- WASHINGTON PARK -->
+<div id="washington-park" class="neighborhood-feature flip" style="background:var(--cream);">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Washington_Park_Denver.JPG/960px-Washington_Park_Denver.JPG" alt="Washington Park Denver" class="nb-photo" />
+  <div class="nb-content">
+    <span class="nb-tag" style="background:var(--dark);">Washington Park</span>
+    <h2 class="nb-title">Denver's most<br /><em>beloved park</em></h2>
+    <p class="nb-desc">Wash Park (as locals call it) revolves around its iconic 165-acre park with two lakes, miles of jogging paths, and summer volleyball leagues. The surrounding neighborhood is full of craftsman bungalows, charming streets, and a tight-knit community feel that's hard to find anywhere else in the city.</p>
+    <div class="nb-tags">
+      <span class="nb-pill">Two lakes & trails</span>
+      <span class="nb-pill">Craftsman homes</span>
+      <span class="nb-pill">Family-friendly</span>
+      <span class="nb-pill">Gaylord Street shops</span>
+      <span class="nb-pill">Community events</span>
+    </div>
+    <div class="nb-stats">
+      <div><div class="nb-stat-val">$850K+</div><div class="nb-stat-label">Median Price</div></div>
+      <div><div class="nb-stat-val">88</div><div class="nb-stat-label">Walk Score</div></div>
+    </div>
+    <div style="margin-top:32px;"><a href="emily-listings.html" class="btn-primary">View Wash Park Listings</a></div>
+  </div>
+</div>
+
+<!-- LOHI -->
+<div id="lohi" class="neighborhood-feature">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Highland001.jpg/960px-Highland001.jpg" alt="LoHi Denver" class="nb-photo" />
+  <div class="nb-content">
+    <span class="nb-tag" style="background:var(--red);">LoHi · Lower Highlands</span>
+    <h2 class="nb-title">Denver's trendiest<br /><em>dining destination</em></h2>
+    <p class="nb-desc">LoHi is where Denver's best restaurants, rooftop bars, and coffee shops have converged. With stunning views of the downtown skyline and easy access to the Platte River trail, it attracts young professionals and design-forward buyers who want to be in the center of the action.</p>
+    <div class="nb-tags">
+      <span class="nb-pill">Rooftop bars</span>
+      <span class="nb-pill">Skyline views</span>
+      <span class="nb-pill">Platte River trail</span>
+      <span class="nb-pill">Top restaurants</span>
+      <span class="nb-pill">Young professionals</span>
+    </div>
+    <div class="nb-stats">
+      <div><div class="nb-stat-val">$650K+</div><div class="nb-stat-label">Median Price</div></div>
+      <div><div class="nb-stat-val">90</div><div class="nb-stat-label">Walk Score</div></div>
+    </div>
+    <div style="margin-top:32px;"><a href="emily-listings.html" class="btn-primary">View LoHi Listings</a></div>
+  </div>
+</div>
+
+<!-- HIGHLANDS -->
+<div id="highlands" class="neighborhood-feature flip" style="background:var(--cream);">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/DenverHighlands.jpg/960px-DenverHighlands.jpg" alt="Highlands Denver" class="nb-photo" />
+  <div class="nb-content">
+    <span class="nb-tag" style="background:var(--dark);">Highlands</span>
+    <h2 class="nb-title">Historic charm,<br /><em>vibrant community</em></h2>
+    <p class="nb-desc">One of Denver's most desirable neighborhoods, the Highlands has deep historic roots and a thriving commercial strip along 32nd Avenue. Victorian homes, local coffee shops, independent restaurants, and a welcoming community make this a perennial favorite for buyers of all ages.</p>
+    <div class="nb-tags">
+      <span class="nb-pill">Victorian homes</span>
+      <span class="nb-pill">32nd Ave strip</span>
+      <span class="nb-pill">Historic architecture</span>
+      <span class="nb-pill">Local restaurants</span>
+      <span class="nb-pill">Community feel</span>
+    </div>
+    <div class="nb-stats">
+      <div><div class="nb-stat-val">$700K+</div><div class="nb-stat-label">Median Price</div></div>
+      <div><div class="nb-stat-val">87</div><div class="nb-stat-label">Walk Score</div></div>
+    </div>
+    <div style="margin-top:32px;"><a href="emily-listings.html" class="btn-primary">View Highlands Listings</a></div>
+  </div>
+</div>
+
+<!-- CONGRESS PARK -->
+<div id="congress-park" class="neighborhood-feature">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Bonfils_Memorial_Theater.JPG/960px-Bonfils_Memorial_Theater.JPG" alt="Congress Park Denver" class="nb-photo" />
+  <div class="nb-content">
+    <span class="nb-tag" style="background:var(--red);">Congress Park</span>
+    <h2 class="nb-title">Quiet streets,<br /><em>eclectic soul</em></h2>
+    <p class="nb-desc">Congress Park sits between Cherry Creek and City Park, giving residents access to both. It's a quieter, more residential neighborhood with beautiful older homes, tree-shaded blocks, and a loyal local community. Ideal for buyers who want character and calm without sacrificing convenience.</p>
+    <div class="nb-tags">
+      <span class="nb-pill">Tree-lined streets</span>
+      <span class="nb-pill">Historic homes</span>
+      <span class="nb-pill">Near City Park</span>
+      <span class="nb-pill">Residential feel</span>
+      <span class="nb-pill">Quiet blocks</span>
+    </div>
+    <div class="nb-stats">
+      <div><div class="nb-stat-val">$600K+</div><div class="nb-stat-label">Median Price</div></div>
+      <div><div class="nb-stat-val">83</div><div class="nb-stat-label">Walk Score</div></div>
+    </div>
+    <div style="margin-top:32px;"><a href="emily-listings.html" class="btn-primary">View Congress Park Listings</a></div>
+  </div>
+</div>
+
+<!-- RINO -->
+<div id="rino" class="neighborhood-feature flip" style="background:var(--cream);">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/The_Source_Hotel%2C_Denver%2C_CO_2021-04-24.jpg/960px-The_Source_Hotel%2C_Denver%2C_CO_2021-04-24.jpg" alt="RiNo Denver" class="nb-photo" />
+  <div class="nb-content">
+    <span class="nb-tag" style="background:var(--dark);">RiNo · River North</span>
+    <h2 class="nb-title">Art, craft beer,<br /><em>and creative energy</em></h2>
+    <p class="nb-desc">RiNo (River North Art District) is Denver's creative hub — murals cover warehouse walls, craft breweries anchor every block, and innovative restaurants pop up constantly. It's the neighborhood for buyers who want something genuinely different: lofts, new construction, and an electric energy that's all its own.</p>
+    <div class="nb-tags">
+      <span class="nb-pill">Art district</span>
+      <span class="nb-pill">Craft breweries</span>
+      <span class="nb-pill">Warehouse lofts</span>
+      <span class="nb-pill">New construction</span>
+      <span class="nb-pill">Food halls</span>
+    </div>
+    <div class="nb-stats">
+      <div><div class="nb-stat-val">$550K+</div><div class="nb-stat-label">Median Price</div></div>
+      <div><div class="nb-stat-val">86</div><div class="nb-stat-label">Walk Score</div></div>
+    </div>
+    <div style="margin-top:32px;"><a href="emily-listings.html" class="btn-primary">View RiNo Listings</a></div>
+  </div>
+</div>
+
+<!-- WHEAT RIDGE -->
+<div id="wheat-ridge" class="neighborhood-feature flip" style="background:var(--cream);">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Wheat_Ridge_Colorado_street.jpg/960px-Wheat_Ridge_Colorado_street.jpg" alt="Wheat Ridge Colorado" class="nb-photo" onerror="this.style.cssText='min-height:420px;background:linear-gradient(135deg,#8B7355,#C4A882);display:block;'" />
+  <div class="nb-content">
+    <span class="nb-tag" style="background:var(--dark);">Wheat Ridge</span>
+    <h2 class="nb-title">Ranch homes,<br /><em>real community</em></h2>
+    <p class="nb-desc">Wheat Ridge is Emily's home — and she'll tell you it's one of Denver's best-kept secrets. With mid-century ranch homes on generous lots, a thriving local restaurant scene, and easy mountain access, it offers incredible value just minutes from Denver. It's the neighborhood where people put down real roots.</p>
+    <div class="nb-tags">
+      <span class="nb-pill">Mid-century ranches</span>
+      <span class="nb-pill">Large lots</span>
+      <span class="nb-pill">Local dining</span>
+      <span class="nb-pill">I-70 access</span>
+      <span class="nb-pill">Emily's neighborhood</span>
+    </div>
+    <div class="nb-stats">
+      <div><div class="nb-stat-val">$550K+</div><div class="nb-stat-label">Median Price</div></div>
+      <div><div class="nb-stat-val">72</div><div class="nb-stat-label">Walk Score</div></div>
+    </div>
+    <div style="margin-top:32px;"><a href="emily-listings.html" class="btn-primary">View Wheat Ridge Listings</a></div>
+  </div>
+</div>
+
+<section style="background:var(--red);padding:72px 80px;text-align:center;">
+  <p class="section-eyebrow" style="color:rgba(255,255,255,0.6);">Not sure which neighborhood fits?</p>
+  <h2 class="serif" style="color:#fff;font-size:52px;font-weight:300;margin-bottom:16px;">Let's <em>figure it out</em> together.</h2>
+  <p style="color:rgba(255,255,255,0.75);font-size:16px;margin-bottom:36px;max-width:500px;margin-left:auto;margin-right:auto;">I know these neighborhoods block by block. Tell me what matters to you and I'll point you in the right direction.</p>
+  <a href="emily-contact.html" style="background:#fff;color:var(--red);padding:16px 40px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;display:inline-block;">Talk to Emily →</a>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand"><div class="brand-name">♥ Emily Chaney</div><p>Denver real estate with heart. 20+ years helping buyers and sellers navigate Colorado's market.</p><div class="footer-social"><a href="https://www.facebook.com/EmilyChaneyRealtor/" target="_blank">f</a><a href="https://www.instagram.com/emheartsdenver/" target="_blank">◎</a><a href="https://www.tiktok.com/@emilygoldievalentine" target="_blank">♪</a></div></div>
+    <div class="footer-col"><h4>Navigate</h4><ul><li><a href="emily-listings.html">Listings</a></li><li><a href="emily-meet-emily.html">Meet Emily</a></li><li><a href="emily-buyers.html">For Buyers</a></li><li><a href="emily-sellers.html">For Sellers</a></li><li><a href="emily-the-looks.html">The Looks</a></li><li><a href="emily-contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Neighborhoods</h4><ul><li><a href="emily-neighborhoods.html#cherry-creek">Cherry Creek</a></li><li><a href="emily-neighborhoods.html#washington-park">Washington Park</a></li><li><a href="emily-neighborhoods.html#lohi">LoHi</a></li><li><a href="emily-neighborhoods.html#highlands">Highlands</a></li><li><a href="emily-neighborhoods.html#wheat-ridge">Wheat Ridge</a></li></ul></div>
+    <div class="footer-col"><h4>Resources</h4><ul><li><a href="emily-buyers.html">Buyer's Guide</a></li><li><a href="emily-sellers.html">Seller's Guide</a></li><li><a href="emily-listings.html">Search Homes</a></li><li><a href="emily-contact.html">Home Valuation</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 Emily Chaney · iheartdenverhomes.com</p><div class="footer-mhm"><span>MHM Homes</span><span>·</span><span>Equal Housing Opportunity</span></div></div>
+</footer>
+</body>
+</html>

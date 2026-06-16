@@ -1,0 +1,126 @@
+/* ── Shared styles for Emily Chaney Real Estate site ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; color: #1a1a1a; background: #fff; -webkit-font-smoothing: antialiased; }
+
+:root {
+  --red:   #a70d2a;
+  --cream: #FAF7F3;
+  --sand:  #EDE8DF;
+  --dark:  #1A1A1A;
+  --mid:   #5A5A5A;
+  --light: #8A8A8A;
+  --white: #FFFFFF;
+  --gold:  #C17C74;
+}
+
+.serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+h1,h2,h3,h4 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; line-height: 1.15; }
+a { text-decoration: none; color: inherit; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 22px 56px;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+}
+.nav-logo { display: flex; align-items: center; gap: 10px; }
+.nav-logo .heart { color: var(--red); font-size: 22px; }
+.nav-logo .brand { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; letter-spacing: .03em; }
+.nav-links { display: flex; gap: 36px; list-style: none; font-size: 13px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; }
+.nav-links a { color: var(--mid); transition: color .2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--dark); }
+.nav-cta { background: var(--red); color: #fff; padding: 11px 26px; font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; border: none; cursor: pointer; transition: background .2s; display: inline-block; }
+.nav-cta:hover { background: #830a21; }
+
+/* BUTTONS */
+.btn-primary { background: var(--red); color: #fff; padding: 16px 36px; font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; border: none; cursor: pointer; transition: background .2s; display: inline-block; }
+.btn-primary:hover { background: #830a21; }
+.btn-secondary { font-size: 13px; font-weight: 500; color: var(--dark); border-bottom: 1px solid var(--dark); padding-bottom: 2px; transition: color .2s, border-color .2s; display: inline-block; }
+.btn-secondary:hover { color: var(--red); border-color: var(--red); }
+.btn-outline { border: 1.5px solid var(--white); color: var(--white); padding: 14px 32px; font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; display: inline-block; transition: background .2s, color .2s; }
+.btn-outline:hover { background: var(--white); color: var(--dark); }
+
+/* SECTION SHARED */
+.section { padding: 100px 80px; }
+.section-alt { background: var(--cream); }
+.section-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+.section-title { font-size: clamp(36px, 3.5vw, 54px); font-weight: 300; margin-bottom: 16px; }
+.section-title em { font-style: italic; color: var(--red); }
+.section-subtitle { font-size: 16px; color: var(--mid); line-height: 1.7; max-width: 560px; }
+.section-header { margin-bottom: 56px; }
+
+/* PAGE HERO (sub-pages) */
+.page-hero {
+  padding: 160px 80px 80px;
+  background: var(--cream);
+  border-bottom: 1px solid var(--sand);
+}
+.page-hero .section-eyebrow { margin-bottom: 12px; }
+.page-hero h1 { font-size: clamp(48px, 5vw, 80px); font-weight: 300; }
+.page-hero h1 em { font-style: italic; color: var(--red); }
+.page-hero p { font-size: 18px; color: var(--mid); line-height: 1.7; max-width: 580px; margin-top: 20px; }
+
+/* STATS STRIP */
+.stats-strip { background: var(--dark); display: grid; grid-template-columns: repeat(4, 1fr); }
+.stat-item { padding: 44px 32px; border-right: 1px solid rgba(255,255,255,0.08); text-align: center; }
+.stat-item:last-child { border-right: none; }
+.stat-num { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; color: var(--white); line-height: 1; }
+.stat-label { font-size: 11px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-top: 8px; }
+
+/* FORM */
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--light); margin-bottom: 8px; }
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: 14px 16px; background: var(--white); border: 1.5px solid var(--sand); font-family: 'Inter', sans-serif; font-size: 14px; color: var(--dark); outline: none; transition: border-color .2s; -webkit-appearance: none; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--red); }
+.form-group textarea { height: 110px; resize: none; }
+.form-submit { width: 100%; background: var(--red); color: #fff; padding: 18px; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; border: none; cursor: pointer; transition: background .2s; margin-top: 8px; }
+.form-submit:hover { background: #830a21; }
+
+/* FOOTER */
+footer { background: var(--dark); padding: 64px 80px 40px; }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.footer-brand .brand-name { font-family: 'Cormorant Garamond', serif; font-size: 26px; color: var(--white); margin-bottom: 16px; }
+.footer-brand p { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.7; margin-bottom: 24px; }
+.footer-social { display: flex; gap: 16px; }
+.footer-social a { width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; font-size: 13px; color: rgba(255,255,255,0.5); transition: all .2s; }
+.footer-social a:hover { background: var(--red); border-color: var(--red); color: #fff; }
+.footer-col h4 { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 20px; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 12px; }
+.footer-col ul li a { font-size: 13px; color: rgba(255,255,255,0.55); transition: color .2s; }
+.footer-col ul li a:hover { color: #fff; }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 32px; }
+.footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.25); }
+.footer-mhm { display: flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,0.25); }
+
+/* TESTIMONIALS */
+.testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 56px; }
+.testimonial-card { background: rgba(255,255,255,0.04); padding: 48px 40px; border: 1px solid rgba(255,255,255,0.06); }
+.testimonial-stars { color: var(--gold); font-size: 14px; letter-spacing: 2px; margin-bottom: 24px; }
+.testimonial-quote { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.88); line-height: 1.65; margin-bottom: 28px; }
+.testimonial-author { font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+
+@media (max-width: 1024px) {
+  nav { padding: 18px 32px; }
+  .nav-links { gap: 18px; font-size: 11px; }
+  .section { padding: 72px 40px; }
+  .page-hero { padding: 130px 40px 60px; }
+  .stats-strip { grid-template-columns: repeat(2, 1fr); }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  footer { padding: 48px 40px 32px; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 700px) {
+  nav { padding: 16px 20px; }
+  .nav-links { display: none; }
+  .section { padding: 60px 24px; }
+  .page-hero { padding: 110px 24px 50px; }
+  footer { padding: 40px 24px 28px; }
+  .footer-top { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}

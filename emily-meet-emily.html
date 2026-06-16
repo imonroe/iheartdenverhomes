@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meet Emily | Emily Chaney Denver Real Estate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    .bio-grid { display: grid; grid-template-columns: 5fr 7fr; gap: 80px; align-items: start; }
+    .bio-photo { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top; display: block; }
+    .bio-photo-wrap { position: relative; }
+    .bio-accent { position: absolute; top: -16px; left: -16px; width: 120px; height: 120px; border: 3px solid var(--red); z-index: -1; }
+    .bio-pull { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 300; line-height: 1.55; color: var(--dark); margin-bottom: 28px; border-left: 3px solid var(--red); padding-left: 24px; }
+    .bio-text { font-size: 16px; line-height: 1.85; color: var(--mid); margin-bottom: 20px; }
+    .bio-text strong { color: var(--dark); font-weight: 500; }
+    .qualities-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 56px; }
+    .quality-card { background: var(--cream); padding: 36px 32px; border-bottom: 3px solid transparent; transition: border-color .3s; }
+    .quality-card:hover { border-color: var(--red); }
+    .quality-num { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 300; color: var(--red); line-height: 1; margin-bottom: 8px; }
+    .quality-name { font-size: 18px; font-family: 'Cormorant Garamond', serif; font-weight: 400; margin-bottom: 8px; }
+    .quality-desc { font-size: 13px; color: var(--mid); line-height: 1.65; }
+    .dogs-section { background: var(--dark); padding: 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .dogs-text h2 { color: #fff; font-size: 48px; margin-bottom: 20px; }
+    .dogs-text h2 em { color: var(--gold); }
+    .dogs-text p { color: rgba(255,255,255,0.65); font-size: 16px; line-height: 1.8; }
+    .dogs-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+    @media (max-width: 1024px) {
+      .bio-grid { grid-template-columns: 1fr; }
+      .bio-photo { aspect-ratio: 16/9; }
+      .qualities-grid { grid-template-columns: repeat(2, 1fr); }
+      .dogs-section { grid-template-columns: 1fr; padding: 60px 40px; }
+    }
+    @media (max-width: 700px) {
+      .qualities-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="emily-chaney-website-redesign.html" class="nav-logo"><span class="heart">♥</span><span class="brand">Emily Chaney</span></a>
+  <ul class="nav-links">
+    <li><a href="emily-listings.html">Listings</a></li>
+    <li><a href="emily-meet-emily.html" class="active">About</a></li>
+    <li><a href="emily-buyers.html">Buyers</a></li>
+    <li><a href="emily-sellers.html">Sellers</a></li>
+    <li><a href="emily-neighborhoods.html">Neighborhoods</a></li>
+  </ul>
+  <a href="emily-contact.html" class="nav-cta">Get in Touch</a>
+</nav>
+
+<div class="page-hero">
+  <p class="section-eyebrow">The Person Behind the Listings</p>
+  <h1>Hey there,<br />I'm <em>Emily!</em></h1>
+  <p>Denver realtor. Great Dane mom. Former Seattle dot-com project manager. Colorado "nativish" — grew up in Arvada, spent years in Seattle, came back and never left.</p>
+</div>
+
+<section class="section">
+  <div class="bio-grid">
+    <div class="bio-photo-wrap">
+      <img src="emily-bookshelf-portrait.jpg" alt="Emily Chaney" class="bio-photo" style="object-position: center top;" />
+      <div class="bio-accent"></div>
+    </div>
+    <div>
+      <p class="bio-pull">"My goal is to help you have the most stress-free real estate experience while finding your perfect home."</p>
+      <p class="bio-text">I grew up in <strong>Arvada, Colorado</strong> — 15 minutes outside Denver. After high school I spent a year at CU Boulder before dreams of the coast took me to the Pacific Northwest. I spent years working as a <strong>Project Manager during Seattle's dot-com boom</strong>, logging countless hours solving problems and managing complex timelines. I also volunteered extensively at an all-ages music venue, which taught me more about creative problem-solving than any business school ever could.</p>
+      <p class="bio-text">I returned to Denver in <strong>2001</strong> to be closer to family — and honestly, because Colorado gets into your blood. The choice to go into real estate was a natural transition: it combines the project management skills I honed in tech with the same creativity I used to solve last-minute concert crises. Getting a client to the closing table is its own kind of live performance.</p>
+      <p class="bio-text">I currently reside in a <strong>1954 ranch in Wheat Ridge</strong> with my Great Danes, <em>Valentine</em> and <em>Goldie</em>. I genuinely love this city and everything around it — the 300 days of sunshine, the mountains 45 minutes away, the microbrews, the rooftop decks, the food scene. I can't wait to show you around.</p>
+      <div style="margin-top:40px;display:flex;gap:16px;flex-wrap:wrap;">
+        <a href="emily-contact.html" class="btn-primary">Let's Work Together</a>
+        <a href="emily-listings.html" class="btn-secondary">View My Listings →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="section-header">
+    <p class="section-eyebrow">How Clients Describe Me</p>
+    <h2 class="section-title">Six words.<br /><em>All true.</em></h2>
+  </div>
+  <div class="qualities-grid">
+    <div class="quality-card"><div class="quality-num">01</div><div class="quality-name">Honest</div><div class="quality-desc">You'll always get the real picture — about prices, timelines, and whether a house is actually right for you.</div></div>
+    <div class="quality-card"><div class="quality-num">02</div><div class="quality-name">Experienced</div><div class="quality-desc">20+ years in Denver means I've navigated every kind of market — boom, bust, and everything in between.</div></div>
+    <div class="quality-card"><div class="quality-num">03</div><div class="quality-name">Dedicated</div><div class="quality-desc">Your transaction gets my full attention. I don't hand you off to an assistant when things get complicated.</div></div>
+    <div class="quality-card"><div class="quality-num">04</div><div class="quality-name">Hardworking</div><div class="quality-desc">Early mornings, late showings, weekend calls — whatever it takes to get the deal done right.</div></div>
+    <div class="quality-card"><div class="quality-num">05</div><div class="quality-name">Funny</div><div class="quality-desc">Real estate is stressful. I believe a little levity goes a long way — and apparently clients agree.</div></div>
+    <div class="quality-card"><div class="quality-num">06</div><div class="quality-name">Savvy</div><div class="quality-desc">Sharp negotiator. Detail-oriented. I protect my clients' interests fiercely and strategically.</div></div>
+  </div>
+</section>
+
+<section style="background:var(--dark);padding:100px 80px;">
+  <p class="section-eyebrow">What Clients Say</p>
+  <h2 class="section-title" style="color:#fff;">In Their Own <em style="color:var(--gold);">Words</em></h2>
+  <div class="testimonials-grid">
+    <div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><p class="testimonial-quote">"Emily was really amazing helping me purchase my first home. So helpful, thoughtful, smart and savvy in navigating the Denver market!"</p><div class="testimonial-author">Alison T. · Buyer</div></div>
+    <div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><p class="testimonial-quote">"Seriously the best damn realtor in Denver, perhaps in the galaxy. Patient, knowledgeable as hell, and a super nice and fun person to boot!"</p><div class="testimonial-author">Michael T. · Buyer</div></div>
+    <div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><p class="testimonial-quote">"I wouldn't use anyone else but Emily when it comes to buying or selling. She knows Denver inside and out and is an amazing negotiator."</p><div class="testimonial-author">Tyler J. · Buyer & Seller</div></div>
+  </div>
+</section>
+
+
+<section class="section" style="background:var(--cream);">
+  <div style="max-width:900px;margin:0 auto;">
+    <p class="section-eyebrow">The Team Behind the Scenes</p>
+    <h2 class="section-title">Meet <em>Heather Dunn</em></h2>
+    <div style="display:grid;grid-template-columns:1fr 2fr;gap:64px;align-items:start;margin-top:48px;">
+<img src="heather-dunn.jpg" alt="Heather Dunn, Operations Coordinator" style="width:100%;aspect-ratio:3/4;object-fit:cover;object-fit:cover;display:block;" onerror="this.style.cssText='width:100%;aspect-ratio:3/4;background:var(--sand);display:block;';this.alt='';" />
+      <div>
+        <div style="margin-bottom:8px;">
+          <span style="font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;background:var(--red);color:#fff;padding:4px 12px;display:inline-block;">Operations Coordinator</span>
+        </div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:400;color:var(--dark);margin:16px 0 20px;">Heather Dunn</h3>
+        <p style="font-size:16px;line-height:1.85;color:var(--mid);margin-bottom:20px;">Behind every smooth transaction is a great operations team — and Heather Dunn is the heartbeat of ours. As Operations Coordinator, Heather keeps every deal on track, every deadline met, and every client well-informed from contract to closing.</p>
+        <p style="font-size:16px;line-height:1.85;color:var(--mid);margin-bottom:20px;">Organized, detail-oriented, and deeply committed to client care, Heather works behind the scenes so your experience is seamless from start to finish. When Emily's in a showing, Heather's the one making sure nothing slips through the cracks.</p>
+        <div style="display:flex;gap:40px;padding-top:28px;border-top:1px solid var(--sand);margin-top:8px;">
+          <div><div style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--red);line-height:1;">100%</div><div style="font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--light);margin-top:4px;">Client Follow-Through</div></div>
+          <div><div style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--red);line-height:1;">Zero</div><div style="font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--light);margin-top:4px;">Dropped Balls</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--red);padding:72px 80px;text-align:center;">
+  <h2 class="serif" style="color:#fff;font-size:52px;font-weight:300;margin-bottom:16px;">Ready to find your <em>Denver home?</em></h2>
+  <p style="color:rgba(255,255,255,0.75);font-size:16px;margin-bottom:36px;">Let's have a no-pressure conversation about what you're looking for.</p>
+  <a href="emily-contact.html" style="background:#fff;color:var(--red);padding:16px 40px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;display:inline-block;">Get in Touch →</a>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand"><div class="brand-name">♥ Emily Chaney</div><p>Denver real estate with heart. 20+ years helping buyers and sellers navigate Colorado's market.</p><div class="footer-social"><a href="https://www.facebook.com/EmilyChaneyRealtor/" target="_blank">f</a><a href="https://www.instagram.com/emheartsdenver/" target="_blank">◎</a><a href="https://www.tiktok.com/@emilygoldievalentine" target="_blank">♪</a></div></div>
+    <div class="footer-col"><h4>Navigate</h4><ul><li><a href="emily-listings.html">Listings</a></li><li><a href="emily-meet-emily.html">Meet Emily</a></li><li><a href="emily-buyers.html">For Buyers</a></li><li><a href="emily-sellers.html">For Sellers</a></li><li><a href="emily-the-looks.html">The Looks</a></li><li><a href="emily-contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Neighborhoods</h4><ul><li><a href="emily-neighborhoods.html#cherry-creek">Cherry Creek</a></li><li><a href="emily-neighborhoods.html#washington-park">Washington Park</a></li><li><a href="emily-neighborhoods.html#lohi">LoHi</a></li><li><a href="emily-neighborhoods.html#highlands">Highlands</a></li><li><a href="emily-neighborhoods.html#wheat-ridge">Wheat Ridge</a></li></ul></div>
+    <div class="footer-col"><h4>Resources</h4><ul><li><a href="emily-buyers.html">Buyer's Guide</a></li><li><a href="emily-sellers.html">Seller's Guide</a></li><li><a href="emily-the-looks.html">The Looks</a></li><li><a href="emily-northwest-denver-guide.html">NW Denver Guide</a></li><li><a href="emily-contact.html">Home Valuation</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 Emily Chaney · iheartdenverhomes.com</p><div class="footer-mhm"><span>MHM Homes</span><span>·</span><span>Equal Housing Opportunity</span></div></div>
+</footer>
+</body>
+</html>

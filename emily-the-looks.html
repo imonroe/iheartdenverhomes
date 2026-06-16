@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Looks | Staging & Design | Emily Chaney Denver Real Estate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    /* ── Hero ── */
+    .looks-hero {
+      background: var(--dark);
+      padding: 120px 80px 100px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .looks-hero-text .section-eyebrow { color: var(--gold); }
+    .looks-hero-text h1 { font-family: 'Cormorant Garamond', serif; font-size: 72px; font-weight: 300; line-height: 1.05; color: #fff; margin: 16px 0 28px; }
+    .looks-hero-text h1 em { color: var(--gold); font-style: italic; }
+    .looks-hero-text p { font-size: 17px; line-height: 1.8; color: rgba(255,255,255,0.65); max-width: 460px; }
+    .looks-hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+    .hero-stat { background: rgba(255,255,255,0.05); padding: 36px 32px; border-left: 3px solid var(--red); }
+    .hero-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; color: var(--gold); line-height: 1; }
+    .hero-stat-label { font-size: 11px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-top: 8px; }
+
+    /* ── Intro strip ── */
+    .looks-intro { background: var(--red); padding: 48px 80px; display: flex; align-items: center; gap: 48px; }
+    .looks-intro p { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 300; color: #fff; line-height: 1.5; flex: 1; }
+    .looks-intro p em { font-style: italic; }
+    .looks-intro-steps { display: flex; gap: 32px; flex-shrink: 0; }
+    .looks-step { text-align: center; color: rgba(255,255,255,0.7); }
+    .looks-step-num { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 300; color: #fff; }
+    .looks-step-label { font-size: 10px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+
+    /* ── Transformation pairs ── */
+    .transform-section { padding: 80px; }
+    .transform-section:nth-child(even) { background: var(--cream); }
+    .transform-header { margin-bottom: 40px; }
+    .transform-address { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--light); margin-bottom: 6px; }
+    .transform-room { font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 300; color: var(--dark); line-height: 1.1; }
+    .transform-room em { color: var(--red); font-style: italic; }
+    .transform-result { display: inline-flex; align-items: center; gap: 12px; margin-top: 12px; }
+    .result-tag { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; padding: 5px 14px; }
+    .result-tag.sold { background: var(--dark); color: #fff; }
+    .result-tag.price { background: var(--red); color: #fff; }
+    .result-tag.days { background: var(--sand); color: var(--dark); }
+
+    /* ── Photo panels ── */
+    .ba-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-top: 28px; }
+    .ba-panel { position: relative; }
+    .ba-label {
+      position: absolute; top: 20px; left: 20px; z-index: 2;
+      font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
+      padding: 6px 14px;
+    }
+    .ba-label.before { background: var(--dark); color: #fff; }
+    .ba-label.after  { background: var(--red);  color: #fff; }
+
+    /* Photo placeholder — drop your image here */
+    .ba-photo {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+    }
+    .ba-placeholder {
+      width: 100%;
+      aspect-ratio: 4/3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-align: center;
+      padding: 32px;
+      box-sizing: border-box;
+    }
+    .ba-placeholder.before-ph { background: #D6CFC5; }
+    .ba-placeholder.after-ph  { background: var(--cream); border: 2px dashed var(--sand); }
+    .ph-icon { font-size: 28px; opacity: .35; }
+    .ph-text { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--light); line-height: 1.6; }
+    .ph-filename { font-size: 10px; color: var(--light); opacity: .7; margin-top: 2px; font-family: monospace; }
+
+    /* ── Transformation detail ── */
+    .transform-detail { margin-top: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+    .detail-block h4 { font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--light); margin-bottom: 10px; }
+    .detail-block p { font-size: 14px; line-height: 1.75; color: var(--mid); }
+
+    /* ── Process section ── */
+    .process-section { background: var(--dark); padding: 100px 80px; }
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 56px; }
+    .process-card { background: rgba(255,255,255,0.04); padding: 40px 32px; border-top: 3px solid var(--red); }
+    .process-num { font-family: 'Cormorant Garamond', serif; font-size: 56px; font-weight: 300; color: var(--red); line-height: 1; }
+    .process-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: #fff; margin: 12px 0 12px; }
+    .process-desc { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.7; }
+
+    /* ── Add photos notice ── */
+    .add-photos-banner { background: var(--sand); border-left: 4px solid var(--red); padding: 24px 32px; margin: 0 80px 0; display: flex; align-items: center; gap: 20px; }
+    .add-photos-banner p { font-size: 14px; line-height: 1.6; color: var(--dark); margin: 0; }
+    .add-photos-banner strong { color: var(--red); }
+
+    @media (max-width: 1100px) {
+      .looks-hero { grid-template-columns: 1fr; padding: 80px 40px; }
+      .looks-intro { flex-direction: column; padding: 48px 40px; }
+      .transform-section { padding: 60px 40px; }
+      .process-grid { grid-template-columns: repeat(2, 1fr); }
+      .add-photos-banner { margin: 0 40px; }
+    }
+    @media (max-width: 700px) {
+      .looks-hero-text h1 { font-size: 48px; }
+      .looks-hero-stats { grid-template-columns: 1fr 1fr; }
+      .ba-panels { grid-template-columns: 1fr; }
+      .transform-detail { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: 1fr; }
+      .looks-intro-steps { gap: 20px; }
+      .add-photos-banner { margin: 0 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="emily-chaney-website-redesign.html" class="nav-logo"><span class="heart">♥</span><span class="brand">Emily Chaney</span></a>
+  <ul class="nav-links">
+    <li><a href="emily-listings.html">Listings</a></li>
+    <li><a href="emily-meet-emily.html">About</a></li>
+    <li><a href="emily-buyers.html">Buyers</a></li>
+    <li><a href="emily-sellers.html">Sellers</a></li>
+    <li><a href="emily-neighborhoods.html">Neighborhoods</a></li>
+  </ul>
+  <a href="emily-contact.html" class="nav-cta">Get in Touch</a>
+</nav>
+
+
+<!-- ════════════════════════════════ HERO ════════════════════════════════ -->
+<div class="looks-hero">
+  <div class="looks-hero-text">
+    <p class="section-eyebrow">Staging &amp; Design</p>
+    <h1>The<br /><em>Looks.</em></h1>
+    <p>Before the showings. Before the photos. Before the offers. This is what happens when we walk in, roll up our sleeves, and transform a home into something buyers can't stop thinking about.</p>
+  </div>
+  <div class="looks-hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-num">$1.4M</div>
+      <div class="hero-stat-label">Highest recent sale</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">11</div>
+      <div class="hero-stat-label">Days avg. on market</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">103%</div>
+      <div class="hero-stat-label">List price achieved</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">20+</div>
+      <div class="hero-stat-label">Yrs staging experience</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════ INTRO STRIP ════════════════════════════════ -->
+<div class="looks-intro">
+  <p>Staging isn't decorating. It's <em>strategy</em> — making buyers feel something the moment they walk through the door, and keeping them feeling it all the way to the offer.</p>
+  <div class="looks-intro-steps">
+    <div class="looks-step"><div class="looks-step-num">Walk</div><div class="looks-step-label">& Assess</div></div>
+    <div class="looks-step"><div class="looks-step-num">Edit</div><div class="looks-step-label">& Stage</div></div>
+    <div class="looks-step"><div class="looks-step-num">Shoot</div><div class="looks-step-label">& List</div></div>
+    <div class="looks-step"><div class="looks-step-num">Sell</div><div class="looks-step-label">& Close</div></div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════ PHOTO NOTICE ════════════════════════════════ -->
+<div style="padding-top:48px; background:var(--white);"></div>
+<div class="add-photos-banner">
+  <span style="font-size:24px;">📸</span>
+  <p><strong>Photos coming soon.</strong> Each slot below is sized and labeled for your real listing before &amp; after photos. Drop the images in and they go live instantly — no code required.</p>
+</div>
+<div style="padding-bottom:8px; background:var(--white);"></div>
+
+
+<!-- ════════════════════════════════ PAIR 1 ════════════════════════════════ -->
+<div class="transform-section">
+  <div class="transform-header">
+    <div class="transform-address">2472 W Argyle Pl · Highlands</div>
+    <div class="transform-room">Living Room <em>Reimagined</em></div>
+    <div class="transform-result">
+      <span class="result-tag sold">Sold</span>
+      <span class="result-tag price">$1,435,000</span>
+      <span class="result-tag days">6 days on market</span>
+    </div>
+  </div>
+
+  <div class="ba-panels">
+    <div class="ba-panel">
+      <span class="ba-label before">Before</span>
+      <!-- Replace with actual before photo: <img src="YOUR-ARGYLE-LIVING-BEFORE.jpg" alt="2472 W Argyle living room before staging" class="ba-photo" /> -->
+      <div class="ba-placeholder before-ph">
+        <div class="ph-icon">◫</div>
+        <div class="ph-text">Living room<br />before staging</div>
+        <div class="ph-filename">argyle-living-before.jpg</div>
+      </div>
+    </div>
+    <div class="ba-panel">
+      <span class="ba-label after">After</span>
+      <!-- Replace with actual after photo: <img src="YOUR-ARGYLE-LIVING-AFTER.jpg" alt="2472 W Argyle living room after staging" class="ba-photo" /> -->
+      <div class="ba-placeholder after-ph">
+        <div class="ph-icon">◫</div>
+        <div class="ph-text">Living room<br />after staging &amp; pro photos</div>
+        <div class="ph-filename">argyle-living-after.jpg</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="transform-detail">
+    <div class="detail-block">
+      <h4>What We Did</h4>
+      <p>Cleared the dated furniture, brought in clean-lined modern pieces, added layered textiles and a statement rug. Replaced heavy window treatments with sheer panels to flood the room with natural light.</p>
+    </div>
+    <div class="detail-block">
+      <h4>The Result</h4>
+      <p>The living room went from feeling cluttered and dark to open, airy, and aspirational — exactly what Highlands buyers are looking for at this price point. Multiple offers in the first weekend.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════ PAIR 2 ════════════════════════════════ -->
+<div class="transform-section">
+  <div class="transform-header">
+    <div class="transform-address">1968 S Clarkson St · Washington Park</div>
+    <div class="transform-room">Primary Bedroom <em>Transformed</em></div>
+    <div class="transform-result">
+      <span class="result-tag sold">Sold</span>
+      <span class="result-tag price">$1,120,000</span>
+      <span class="result-tag days">9 days on market</span>
+    </div>
+  </div>
+
+  <div class="ba-panels">
+    <div class="ba-panel">
+      <span class="ba-label before">Before</span>
+      <!-- Replace with actual before photo: <img src="YOUR-CLARKSON-BED-BEFORE.jpg" alt="S Clarkson primary bedroom before staging" class="ba-photo" /> -->
+      <div class="ba-placeholder before-ph">
+        <div class="ph-icon">◫</div>
+        <div class="ph-text">Primary bedroom<br />before staging</div>
+        <div class="ph-filename">clarkson-bedroom-before.jpg</div>
+      </div>
+    </div>
+    <div class="ba-panel">
+      <span class="ba-label after">After</span>
+      <!-- Replace with actual after photo: <img src="YOUR-CLARKSON-BED-AFTER.jpg" alt="S Clarkson primary bedroom after staging" class="ba-photo" /> -->
+      <div class="ba-placeholder after-ph">
+        <div class="ph-icon">◫</div>
+        <div class="ph-text">Primary bedroom<br />after staging &amp; pro photos</div>
+        <div class="ph-filename">clarkson-bedroom-after.jpg</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="transform-detail">
+    <div class="detail-block">
+      <h4>What We Did</h4>
+      <p>Swapped mismatched bedroom furniture for a cohesive linen palette. Added an upholstered headboard, layered bedding, and flanking nightstands with warm accent lighting. Decluttered every surface.</p>
+    </div>
+    <div class="detail-block">
+      <h4>The Result</h4>
+      <p>A bedroom that felt like a retreat rather than a storage room. Buyers touring Wash Park homes in this range expect a sanctuary — we gave them one, and the offers reflected it.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════ PAIR 3 ════════════════════════════════ -->
+<div class="transform-section">
+  <div class="transform-header">
+    <div class="transform-address">6730 W 36th Ave · Wheat Ridge</div>
+    <div class="transform-room">Kitchen &amp; Dining <em>Elevated</em></div>
+    <div class="transform-result">
+      <span class="result-tag sold">Sold</span>
+      <span class="result-tag price">$695,000</span>
+      <span class="result-tag days">14 days on market</span>
+    </div>
+  </div>
+
+  <div class="ba-panels">
+    <div class="ba-panel">
+      <span class="ba-label before">Before</span>
+      <!-- Replace with actual before photo: <img src="YOUR-36TH-KITCHEN-BEFORE.jpg" alt="W 36th kitchen before staging" class="ba-photo" /> -->
+      <div class="ba-placeholder before-ph">
+        <div class="ph-icon">◫</div>
+        <div class="ph-text">Kitchen &amp; dining<br />before staging</div>
+        <div class="ph-filename">w36th-kitchen-before.jpg</div>
+      </div>
+    </div>
+    <div class="ba-panel">
+      <span class="ba-label after">After</span>
+      <!-- Replace with actual after photo: <img src="YOUR-36TH-KITCHEN-AFTER.jpg" alt="W 36th kitchen after staging" class="ba-photo" /> -->
+      <div class="ba-placeholder after-ph">
+        <div class="ph-icon">◫</div>
+        <div class="ph-text">Kitchen &amp; dining<br />after staging &amp; pro photos</div>
+        <div class="ph-filename">w36th-kitchen-after.jpg</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="transform-detail">
+    <div class="detail-block">
+      <h4>What We Did</h4>
+      <p>Cleared the countertops down to three intentional objects. Added a simple wooden bowl, fresh greenery, and a coordinated bar cart nearby. Set the dining table with neutral linens and minimal place settings.</p>
+    </div>
+    <div class="detail-block">
+      <h4>The Result</h4>
+      <p>A Wheat Ridge ranch that read cozy and current — not cluttered. The kitchen photos stopped the scroll online and drove more showings in the first week than the sellers expected.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════ PAIR 4 ════════════════════════════════ -->
+<div class="transform-section">
+  <div class="transform-header">
+    <div class="transform-address">1601 N Hooker St · LoHi</div>
+    <div class="transform-room">Open Living &amp; Dining <em>Connected</em></div>
+    <div class="transform-result">
+      <span class="result-tag sold">Sold</span>
+      <span class="result-tag price">$1,035,000</span>
+      <span class="result-tag days">7 days on market</span>
+    </div>
+  </div>
+
+  <div class="ba-panels">
+    <div class="ba-panel">
+      <span class="ba-label before">Before</span>
+      <!-- Replace with actual before photo: <img src="YOUR-HOOKER-LIVING-BEFORE.jpg" alt="N Hooker open living before staging" class="ba-photo" /> -->
+      <div class="ba-placeholder before-ph">
+        <div class="ph-icon">◫</div>
+        <div class="ph-text">Open living &amp; dining<br />before staging</div>
+        <div class="ph-filename">hooker-living-before.jpg</div>
+      </div>
+    </div>
+    <div class="ba-panel">
+      <span class="ba-label after">After</span>
+      <!-- Replace with actual after photo: <img src="YOUR-HOOKER-LIVING-AFTER.jpg" alt="N Hooker open living after staging" class="ba-photo" /> -->
+      <div class="ba-placeholder after-ph">
+        <div class="ph-icon">◫</div>
+        <div class="ph-text">Open living &amp; dining<br />after staging &amp; pro photos</div>
+        <div class="ph-filename">hooker-living-after.jpg</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="transform-detail">
+    <div class="detail-block">
+      <h4>What We Did</h4>
+      <p>Defined the zones in an open-concept space that was reading as too sparse and disconnected. Added an area rug to anchor the seating, pulled in warm-toned art, and created a cohesive sightline from entry to back wall.</p>
+    </div>
+    <div class="detail-block">
+      <h4>The Result</h4>
+      <p>LoHi buyers want loft energy with livability — we gave them exactly that. The space photographed beautifully and the home went under contract before the weekend was over.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════ PAIR 5 ════════════════════════════════ -->
+<div class="transform-section">
+  <div class="transform-header">
+    <div class="transform-address">4745 Garland St · Wheat Ridge</div>
+    <div class="transform-room">Entry &amp; Main Living <em>First Impressions</em></div>
+    <div class="transform-result">
+      <span class="result-tag sold">Sold</span>
+      <span class="result-tag price">$675,000</span>
+      <span class="result-tag days">12 days on market</span>
+    </div>
+  </div>
+
+  <div class="ba-panels">
+    <div class="ba-panel">
+      <span class="ba-label before">Before</span>
+      <!-- Replace with actual before photo: <img src="YOUR-GARLAND-ENTRY-BEFORE.jpg" alt="Garland entry before staging" class="ba-photo" /> -->
+      <div class="ba-placeholder before-ph">
+        <div class="ph-icon">◫</div>
+        <div class="ph-text">Entry &amp; main living<br />before staging</div>
+        <div class="ph-filename">garland-entry-before.jpg</div>
+      </div>
+    </div>
+    <div class="ba-panel">
+      <span class="ba-label after">After</span>
+      <!-- Replace with actual after photo: <img src="YOUR-GARLAND-ENTRY-AFTER.jpg" alt="Garland entry after staging" class="ba-photo" /> -->
+      <div class="ba-placeholder after-ph">
+        <div class="ph-icon">◫</div>
+        <div class="ph-text">Entry &amp; main living<br />after staging &amp; pro photos</div>
+        <div class="ph-filename">garland-entry-after.jpg</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="transform-detail">
+    <div class="detail-block">
+      <h4>What We Did</h4>
+      <p>The entry set the wrong tone — we fixed it first. Added a console table with a mirror, cleared the excess furniture from the main living area, and painted an accent wall in a warm neutral to unify the space.</p>
+    </div>
+    <div class="detail-block">
+      <h4>The Result</h4>
+      <p>A Wheat Ridge ranch that felt intentional and updated the moment buyers walked in. That first-impression fix alone drove more positive showing feedback — and ultimately a clean offer.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════ PROCESS ════════════════════════════════ -->
+<div class="process-section">
+  <p class="section-eyebrow" style="color:var(--gold);">How It Works</p>
+  <h2 class="section-title" style="color:#fff;">The process behind<br /><em style="color:var(--gold);">every transformation.</em></h2>
+  <div class="process-grid">
+    <div class="process-card">
+      <div class="process-num">01</div>
+      <div class="process-name">Walk &amp; Assess</div>
+      <div class="process-desc">We walk every room together — eyes fresh, clipboard ready. What's working? What's not? What do buyers in this neighborhood actually respond to? That's the conversation.</div>
+    </div>
+    <div class="process-card">
+      <div class="process-num">02</div>
+      <div class="process-name">Edit &amp; Stage</div>
+      <div class="process-desc">Less is almost always more. We clear the clutter, bring in the right pieces, and style every surface with intention. This isn't decorating — it's product positioning.</div>
+    </div>
+    <div class="process-card">
+      <div class="process-num">03</div>
+      <div class="process-name">Professional Photos</div>
+      <div class="process-desc">We shoot with a professional photographer — no iPhone photos, no overhead overhead lighting. The listing photos are your first showing, and we treat them like it.</div>
+    </div>
+    <div class="process-card">
+      <div class="process-num">04</div>
+      <div class="process-name">Strategic Launch</div>
+      <div class="process-desc">We go live at the right time, priced right, with marketing that gets eyes on it immediately. The staging sets it up — the launch strategy brings buyers in.</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════ CTA ════════════════════════════════ -->
+<section style="background:var(--red);padding:80px;text-align:center;">
+  <p class="section-eyebrow" style="color:rgba(255,255,255,0.6);">Ready to sell?</p>
+  <h2 class="serif" style="color:#fff;font-size:52px;font-weight:300;margin:12px 0 20px;">Let's talk about what your<br /><em>home could look like.</em></h2>
+  <p style="color:rgba(255,255,255,0.7);font-size:16px;margin-bottom:40px;">Free staging consultation with every listing. No pressure, just possibilities.</p>
+  <a href="emily-contact.html" style="background:#fff;color:var(--red);padding:18px 48px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;display:inline-block;text-decoration:none;">Schedule a Walkthrough →</a>
+</section>
+
+
+<!-- ════════════════════════════════ FOOTER ════════════════════════════════ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="brand-name">♥ Emily Chaney</div>
+      <p>Denver real estate with heart. 20+ years helping buyers and sellers navigate Colorado's market.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/EmilyChaneyRealtor/" target="_blank">f</a>
+        <a href="https://www.instagram.com/emheartsdenver/" target="_blank">◎</a>
+        <a href="https://www.tiktok.com/@emilygoldievalentine" target="_blank">♪</a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Navigate</h4><ul>
+      <li><a href="emily-listings.html">Listings</a></li>
+      <li><a href="emily-meet-emily.html">Meet Emily</a></li>
+      <li><a href="emily-buyers.html">For Buyers</a></li>
+      <li><a href="emily-sellers.html">For Sellers</a></li>
+      <li><a href="emily-the-looks.html" class="active">The Looks</a></li>
+      <li><a href="emily-contact.html">Contact</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Neighborhoods</h4><ul>
+      <li><a href="emily-neighborhoods.html#cherry-creek">Cherry Creek</a></li>
+      <li><a href="emily-neighborhoods.html#washington-park">Washington Park</a></li>
+      <li><a href="emily-neighborhoods.html#lohi">LoHi</a></li>
+      <li><a href="emily-neighborhoods.html#highlands">Highlands</a></li>
+      <li><a href="emily-neighborhoods.html#wheat-ridge">Wheat Ridge</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Resources</h4><ul>
+      <li><a href="emily-buyers.html">Buyer's Guide</a></li>
+      <li><a href="emily-sellers.html">Seller's Guide</a></li>
+      <li><a href="emily-the-looks.html">The Looks</a></li>
+      <li><a href="emily-northwest-denver-guide.html">NW Denver Guide</a></li>
+      <li><a href="emily-contact.html">Home Valuation</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Emily Chaney · iheartdenverhomes.com</p>
+    <div class="footer-mhm"><span>MHM Homes</span><span>·</span><span>Equal Housing Opportunity</span></div>
+  </div>
+</footer>
+
+</body>
+</html>

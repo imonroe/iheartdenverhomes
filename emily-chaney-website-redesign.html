@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emily Chaney | Denver Real Estate With Heart</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    /* ── HOME-SPECIFIC ── */
+    #hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 88px; }
+    .hero-left { background: var(--cream); display: flex; flex-direction: column; justify-content: center; padding: 80px 64px 80px 80px; }
+    .hero-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 22px; }
+    .hero-headline { font-size: clamp(52px, 5.5vw, 78px); font-weight: 300; line-height: 1.08; margin-bottom: 28px; }
+    .hero-headline em { font-style: italic; color: var(--red); }
+    .hero-sub { font-size: 16px; color: var(--mid); line-height: 1.75; max-width: 440px; margin-bottom: 44px; }
+    .hero-actions { display: flex; gap: 16px; align-items: center; }
+    .hero-right { position: relative; overflow: hidden; }
+    .hero-photo { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+    .hero-badge { position: absolute; bottom: 48px; left: -1px; background: var(--white); padding: 20px 28px; box-shadow: 0 8px 32px rgba(0,0,0,0.12); }
+    .hero-badge .badge-num { font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 300; color: var(--red); line-height: 1; }
+    .hero-badge .badge-label { font-size: 11px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--mid); margin-top: 4px; }
+
+    /* LISTINGS */
+    .listings-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .listing-card { position: relative; overflow: hidden; cursor: pointer; }
+    .listing-card:first-child { grid-column: span 2; }
+    .listing-card:hover .listing-img { transform: scale(1.04); }
+    .listing-img { width: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
+    .listing-card:first-child .listing-img { aspect-ratio: 16/9; }
+    .listing-card:not(:first-child) .listing-img { aspect-ratio: 4/3; }
+    .listing-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 32px 28px 28px; background: linear-gradient(transparent, rgba(0,0,0,0.72)); color: #fff; }
+    .listing-status { font-size: 10px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; background: var(--red); color: #fff; padding: 4px 10px; display: inline-block; margin-bottom: 10px; }
+    .listing-status.sold { background: var(--dark); }
+    .listing-status.pending { background: var(--gold); }
+    .listing-address { font-family: 'Cormorant Garamond', serif; font-size: 22px; }
+    .listing-price { font-size: 14px; font-weight: 500; margin-top: 4px; opacity: .9; }
+    .listing-meta { font-size: 12px; opacity: .7; margin-top: 4px; }
+
+    /* ABOUT */
+    .about-grid { display: grid; grid-template-columns: 5fr 7fr; gap: 80px; align-items: center; }
+    .about-photo-wrap { position: relative; }
+    .about-photo { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top; display: block; }
+    .about-accent { position: absolute; bottom: -20px; right: -20px; width: 140px; height: 140px; border: 3px solid var(--red); z-index: -1; }
+    .about-text { font-size: 17px; line-height: 1.8; color: var(--mid); margin-bottom: 20px; }
+    .about-text strong { color: var(--dark); font-weight: 500; }
+    .about-text:first-of-type { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 300; color: var(--dark); line-height: 1.55; }
+    .about-credentials { display: flex; gap: 32px; margin-top: 40px; padding-top: 36px; border-top: 1px solid var(--sand); }
+    .credential-value { font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 300; color: var(--red); line-height: 1; }
+    .credential-label { font-size: 11px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--light); margin-top: 4px; }
+
+    /* SERVICES */
+    .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--sand); }
+    .service-card { background: var(--white); padding: 72px 64px; position: relative; overflow: hidden; transition: background .3s; }
+    .service-card:hover { background: var(--red); }
+    .service-card:hover * { color: #fff !important; }
+    .service-card:hover .service-list li { border-color: rgba(255,255,255,0.2) !important; }
+    .service-card:hover .service-list li::before { color: #fff !important; }
+    .service-num { font-family: 'Cormorant Garamond', serif; font-size: 80px; font-weight: 300; color: var(--sand); line-height: 1; position: absolute; top: 40px; right: 48px; }
+    .service-icon { font-size: 32px; margin-bottom: 28px; }
+    .service-title { font-size: 36px; font-weight: 300; margin-bottom: 18px; }
+    .service-desc { font-size: 15px; line-height: 1.75; color: var(--mid); margin-bottom: 36px; max-width: 360px; }
+    .service-list { list-style: none; margin-bottom: 40px; }
+    .service-list li { font-size: 13px; color: var(--mid); padding: 8px 0; border-bottom: 1px solid var(--sand); display: flex; align-items: center; gap: 10px; }
+    .service-list li::before { content: '→'; color: var(--red); }
+    .service-arrow { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border: 1.5px solid var(--dark); font-size: 18px; transition: all .3s; }
+
+    /* NEIGHBORHOODS */
+    .neighborhoods-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; }
+    .neighborhood-card { position: relative; overflow: hidden; cursor: pointer; aspect-ratio: 3/4; display: block; }
+    .neighborhood-bg { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; transition: transform .5s ease; }
+    .neighborhood-card:hover .neighborhood-bg { transform: scale(1.06); }
+    .neighborhood-overlay { position: absolute; inset: 0; background: linear-gradient(160deg, transparent 35%, rgba(0,0,0,0.72) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 32px; transition: background .3s; }
+    .neighborhood-card:hover .neighborhood-overlay { background: linear-gradient(160deg, rgba(193,59,47,0.15) 0%, rgba(0,0,0,0.82) 100%); }
+    .neighborhood-name { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 400; color: #fff; }
+    .neighborhood-vibe { font-size: 12px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-top: 4px; }
+
+    /* INSTAGRAM */
+    .instagram-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 2px; margin-top: 40px; }
+    .ig-item { aspect-ratio: 1; overflow: hidden; }
+    .ig-placeholder { width: 100%; height: 100%; display: block; transition: filter .3s; }
+    .ig-item:hover .ig-placeholder { filter: brightness(1.1); }
+
+    @media (max-width: 1024px) {
+      #hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-right { aspect-ratio: 4/3; }
+      .hero-left { padding: 60px 40px; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-photo { aspect-ratio: 16/9; }
+      .services-grid { grid-template-columns: 1fr; }
+      .neighborhoods-grid { grid-template-columns: repeat(2, 1fr); }
+      .listings-grid { grid-template-columns: 1fr 1fr; }
+      .listing-card:first-child { grid-column: span 2; }
+      .instagram-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 700px) {
+      .hero-left { padding: 40px 24px; }
+      .neighborhoods-grid { grid-template-columns: 1fr 1fr; }
+      .listings-grid { grid-template-columns: 1fr; }
+      .listing-card:first-child { grid-column: span 1; }
+      .instagram-grid { grid-template-columns: repeat(3, 1fr); }
+      .about-credentials { flex-wrap: wrap; gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="emily-chaney-website-redesign.html" class="nav-logo">
+    <span class="heart">♥</span>
+    <span class="brand">Emily Chaney</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="emily-listings.html">Listings</a></li>
+    <li><a href="emily-meet-emily.html">About</a></li>
+    <li><a href="emily-buyers.html">Buyers</a></li>
+    <li><a href="emily-sellers.html">Sellers</a></li>
+    <li><a href="emily-neighborhoods.html">Neighborhoods</a></li>
+  </ul>
+  <a href="emily-contact.html" class="nav-cta">Get in Touch</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow serif">Denver Real Estate · MHM Homes</p>
+    <h1 class="hero-headline">
+      Denver<br />Real Estate<br /><em>With Heart</em>
+    </h1>
+    <p class="hero-sub">Buying or selling a home is one of life's biggest moments. With 20+ years in the Denver market, I'm here to make sure yours is exciting — not stressful.</p>
+    <div class="hero-actions">
+      <a href="emily-contact.html" class="btn-primary">Let's Talk</a>
+      <a href="emily-listings.html" class="btn-secondary">View Listings →</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="emily-bookshelf-portrait.jpg" alt="Emily Chaney, Denver Realtor" class="hero-photo" />
+    <div class="hero-badge">
+      <div class="badge-num">20<span style="font-size:24px">+</span></div>
+      <div class="badge-label">Years in Denver</div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stat-item"><div class="stat-num">20<span style="font-size:28px">+</span></div><div class="stat-label">Years Experience</div></div>
+  <div class="stat-item"><div class="stat-num">500<span style="font-size:28px">+</span></div><div class="stat-label">Homes Sold</div></div>
+  <div class="stat-item"><div class="stat-num">5<span style="font-size:28px">★</span></div><div class="stat-label">Client Rating</div></div>
+  <div class="stat-item"><div class="stat-num">300<span style="font-size:28px">+</span></div><div class="stat-label">Days of Denver Sunshine</div></div>
+</div>
+
+<!-- LISTINGS -->
+<section class="section" style="padding-left:0;padding-right:0;padding-bottom:0;">
+  <div style="padding:0 80px 48px;">
+    <div class="section-header">
+      <p class="section-eyebrow">Properties</p>
+      <h2 class="section-title">Featured <em>Listings</em></h2>
+      <p class="section-subtitle">Current listings and recent sales across Denver and surrounding neighborhoods.</p>
+    </div>
+  </div>
+  <div class="listings-grid">
+    <div class="listing-card">
+      <div style="aspect-ratio:16/9;background:linear-gradient(135deg,var(--sand),#d4c5b0);display:flex;align-items:center;justify-content:center;"><span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--mid);opacity:0.6;">Centennial</span></div>
+      <div class="listing-overlay">
+        <span class="listing-status">Active</span>
+        <div class="listing-address">6928 S Columbine Way, Centennial</div>
+        <div class="listing-price">$825,000</div>
+        <div class="listing-meta">4 bd · 3 ba · 2,607 sqft</div>
+      </div>
+    </div>
+    <div class="listing-card">
+      <div style="aspect-ratio:4/3;background:linear-gradient(135deg,#c8b8a2,#e8d8c4);display:flex;align-items:center;justify-content:center;"><span style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--mid);opacity:0.6;">Denver · Cole</span></div>
+      <div class="listing-overlay">
+        <span class="listing-status">Active</span>
+        <div class="listing-address">3733 N Franklin St, Denver</div>
+        <div class="listing-price">$750,000</div>
+        <div class="listing-meta">3 bd · 3 ba · 1,682 sqft</div>
+      </div>
+    </div>
+    <div class="listing-card">
+      <div style="aspect-ratio:4/3;background:linear-gradient(135deg,#8a7a6a,#b09880);display:flex;align-items:center;justify-content:center;"><span style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:rgba(255,255,255,0.5);">Highlands · LoHi</span></div>
+      <div class="listing-overlay">
+        <span class="listing-status sold">Just Sold</span>
+        <div class="listing-address">2472 W Argyle Place, Denver</div>
+        <div class="listing-price">$1,435,000</div>
+        <div class="listing-meta">Denver · Highlands</div>
+      </div>
+    </div>
+    <div class="listing-card">
+      <div style="aspect-ratio:4/3;background:linear-gradient(135deg,#7a6a5a,#a08870);display:flex;align-items:center;justify-content:center;"><span style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:rgba(255,255,255,0.5);">Wash Park</span></div>
+      <div class="listing-overlay">
+        <span class="listing-status sold">Just Sold</span>
+        <div class="listing-address">1968 S Clarkson St, Denver</div>
+        <div class="listing-price">$1,120,000</div>
+        <div class="listing-meta">3 bd · 4 ba · 3,240 sqft</div>
+      </div>
+    </div>
+    <div class="listing-card">
+      <div style="aspect-ratio:4/3;background:linear-gradient(135deg,#6a5a4a,#907868);display:flex;align-items:center;justify-content:center;"><span style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:rgba(255,255,255,0.5);">Cherry Creek</span></div>
+      <div class="listing-overlay">
+        <span class="listing-status sold">Just Sold</span>
+        <div class="listing-address">463 S Washington St, Denver</div>
+        <div class="listing-price">$1,200,000</div>
+        <div class="listing-meta">4 bd · 3 ba · 2,557 sqft</div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;padding:48px 0 80px;">
+    <a href="emily-listings.html" class="btn-primary">View All Listings →</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section section-alt">
+  <div class="about-grid">
+    <div class="about-photo-wrap">
+      <img src="emily-sofa-art.jpg" alt="Emily Chaney" class="about-photo" />
+      <div class="about-accent"></div>
+    </div>
+    <div>
+      <p class="section-eyebrow">Meet Emily</p>
+      <h2 class="section-title">Denver "nativish."<br /><em>Let me show you around.</em></h2>
+      <p class="about-text">"Buying or selling a house can be exciting, emotional, and stressful — but it doesn't have to be. My goal is to give you the most stress-free real estate experience possible."</p>
+      <p class="about-text" style="font-family:'Inter',sans-serif;font-size:15px;">With <strong>20+ years navigating Denver's ever-changing market</strong>, I've been through the booms and the busts — which means I bring real-world experience to every transaction. Grew up in Arvada, spent years in Seattle, came back in 2001 and never left. This city is in my bones.</p>
+      <div class="about-credentials">
+        <div class="credential"><div class="credential-value">20+</div><div class="credential-label">Years Experience</div></div>
+        <div class="credential"><div class="credential-value">MHM</div><div class="credential-label">Homes Agent</div></div>
+        <div class="credential"><div class="credential-value">5★</div><div class="credential-label">Client Rated</div></div>
+      </div>
+      <div style="margin-top:40px;display:flex;gap:16px;">
+        <a href="emily-meet-emily.html" class="btn-primary">Meet Emily</a>
+        <a href="emily-contact.html" class="btn-secondary">Work Together →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<div class="services-grid">
+  <div class="service-card">
+    <span class="service-num">01</span>
+    <div class="service-icon">🏡</div>
+    <h3 class="service-title serif">Buying<br />a Home</h3>
+    <p class="service-desc">Denver's market moves fast. You need someone who knows every neighborhood, every pocket listing, and exactly how to negotiate on your behalf.</p>
+    <ul class="service-list">
+      <li>Expert neighborhood guidance</li>
+      <li>Strategic offer preparation</li>
+      <li>Skilled negotiation & advocacy</li>
+      <li>From first look to closing day</li>
+    </ul>
+    <a href="emily-buyers.html" class="service-arrow">→</a>
+  </div>
+  <div class="service-card">
+    <span class="service-num">02</span>
+    <div class="service-icon">💰</div>
+    <h3 class="service-title serif">Selling<br />Your Home</h3>
+    <p class="service-desc">Getting top dollar requires strategy, marketing, and pricing expertise. I'll position your home to attract the right buyers at the right price.</p>
+    <ul class="service-list">
+      <li>Accurate market pricing</li>
+      <li>Professional staging advice</li>
+      <li>Full marketing rollout</li>
+      <li>Smooth close, maximum return</li>
+    </ul>
+    <a href="emily-sellers.html" class="service-arrow">→</a>
+  </div>
+</div>
+
+<!-- PHOTO STRIP -->
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:3px;overflow:hidden;">
+  <div style="aspect-ratio:3/4;overflow:hidden;"><img src="emily-hallway-red.jpg" alt="Emily Chaney" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;" /></div>
+  <div style="aspect-ratio:3/4;overflow:hidden;"><img src="emily-hug-me.jpg" alt="Emily Chaney" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;" /></div>
+  <div style="aspect-ratio:3/4;overflow:hidden;"><img src="emily-phone-kitchen.jpg" alt="Emily Chaney" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;" /></div>
+  <div style="aspect-ratio:3/4;overflow:hidden;"><img src="emily-entryway-cactus.jpg" alt="Emily Chaney" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;" /></div>
+</div>
+
+<!-- TESTIMONIALS -->
+<section style="background:var(--dark);padding:100px 80px;">
+  <p class="section-eyebrow">What Clients Say</p>
+  <h2 class="section-title" style="color:#fff;">Real Stories,<br /><em style="color:var(--gold);">Real Results</em></h2>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-quote">"Emily was really amazing helping me purchase my first home. So helpful, thoughtful, smart and savvy in navigating the Denver market!"</p>
+      <div class="testimonial-author">Alison T. · Buyer</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-quote">"Seriously the best damn realtor in Denver, perhaps in the galaxy. Patient, knowledgeable as hell, and a super nice and fun person to boot!"</p>
+      <div class="testimonial-author">Michael T. · Buyer</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-quote">"I wouldn't use anyone else but Emily when it comes to buying or selling. She knows Denver inside and out and is an amazing negotiator."</p>
+      <div class="testimonial-author">Tyler J. · Buyer & Seller</div>
+    </div>
+  </div>
+</section>
+
+<!-- NEIGHBORHOODS -->
+<section class="section section-alt">
+  <div class="section-header">
+    <p class="section-eyebrow">Explore Denver</p>
+    <h2 class="section-title">Find Your <em>Neighborhood</em></h2>
+    <p class="section-subtitle">Every corner of Denver has its own personality. Let's find yours.</p>
+  </div>
+  <div class="neighborhoods-grid">
+    <a href="emily-neighborhoods.html#cherry-creek" class="neighborhood-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/CherryCreekAF.jpg/960px-CherryCreekAF.jpg" alt="Cherry Creek Denver" class="neighborhood-bg" />
+      <div class="neighborhood-overlay">
+        <div class="neighborhood-name">Cherry Creek</div>
+        <div class="neighborhood-vibe">Upscale · Walkable · Dining</div>
+      </div>
+    </a>
+    <a href="emily-neighborhoods.html#washington-park" class="neighborhood-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Washington_Park_Denver.JPG/960px-Washington_Park_Denver.JPG" alt="Washington Park Denver" class="neighborhood-bg" />
+      <div class="neighborhood-overlay">
+        <div class="neighborhood-name">Washington Park</div>
+        <div class="neighborhood-vibe">Outdoorsy · Families · Parks</div>
+      </div>
+    </a>
+    <a href="emily-neighborhoods.html#lohi" class="neighborhood-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Highland001.jpg/960px-Highland001.jpg" alt="LoHi Denver" class="neighborhood-bg" />
+      <div class="neighborhood-overlay">
+        <div class="neighborhood-name">LoHi</div>
+        <div class="neighborhood-vibe">Trendy · Restaurants · Views</div>
+      </div>
+    </a>
+    <a href="emily-neighborhoods.html#highlands" class="neighborhood-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/DenverHighlands.jpg/960px-DenverHighlands.jpg" alt="Highlands Denver" class="neighborhood-bg" />
+      <div class="neighborhood-overlay">
+        <div class="neighborhood-name">Highlands</div>
+        <div class="neighborhood-vibe">Historic · Vibrant · Community</div>
+      </div>
+    </a>
+    <a href="emily-neighborhoods.html#congress-park" class="neighborhood-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Bonfils_Memorial_Theater.JPG/960px-Bonfils_Memorial_Theater.JPG" alt="Congress Park Denver" class="neighborhood-bg" />
+      <div class="neighborhood-overlay">
+        <div class="neighborhood-name">Congress Park</div>
+        <div class="neighborhood-vibe">Quiet · Charming · Eclectic</div>
+      </div>
+    </a>
+    <a href="emily-neighborhoods.html#rino" class="neighborhood-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/The_Source_Hotel%2C_Denver%2C_CO_2021-04-24.jpg/960px-The_Source_Hotel%2C_Denver%2C_CO_2021-04-24.jpg" alt="RiNo Denver" class="neighborhood-bg" />
+      <div class="neighborhood-overlay">
+        <div class="neighborhood-name">RiNo</div>
+        <div class="neighborhood-vibe">Arts · Craft Beer · Creative</div>
+      </div>
+    </a>
+  </div>
+  <div style="text-align:center;margin-top:48px;">
+    <a href="emily-neighborhoods.html" class="btn-primary">Explore All Neighborhoods →</a>
+  </div>
+</section>
+
+<!-- INSTAGRAM -->
+<div style="padding:80px;text-align:center;background:var(--white);">
+  <p class="section-eyebrow">Follow Along</p>
+  <h2 class="serif" style="font-size:42px;font-weight:300;">Life in <em style="font-style:italic;color:var(--red);">Denver</em></h2>
+  <p style="font-size:14px;color:var(--mid);margin-top:8px;">Behind the listings, the neighborhood finds, and the Colorado life.</p>
+  <div class="instagram-grid">
+    <div class="ig-item"><div style="width:100%;height:100%;aspect-ratio:1;background:linear-gradient(135deg,#c4a882,#a08060);"></div></div>
+    <div class="ig-item"><div style="width:100%;height:100%;aspect-ratio:1;background:linear-gradient(135deg,#8ba888,#6a8868);"></div></div>
+    <div class="ig-item"><div style="width:100%;height:100%;aspect-ratio:1;background:linear-gradient(135deg,#a8a8c4,#7878a8);"></div></div>
+    <div class="ig-item"><div style="width:100%;height:100%;aspect-ratio:1;background:linear-gradient(135deg,#c4a8a8,#a87878);"></div></div>
+    <div class="ig-item"><div style="width:100%;height:100%;aspect-ratio:1;background:linear-gradient(135deg,#a8c4b8,#78a898);"></div></div>
+    <div class="ig-item"><div style="width:100%;height:100%;aspect-ratio:1;background:linear-gradient(135deg,#c4bca8,#a09880);"></div></div>
+  </div>
+  <a href="https://www.instagram.com/emheartsdenver/" target="_blank" style="display:inline-flex;align-items:center;gap:8px;margin-top:32px;font-size:14px;font-weight:500;color:var(--mid);transition:color .2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--mid)'">♥ @emheartsdenver on Instagram</a>
+</div>
+
+<!-- CONTACT BANNER -->
+<section style="background:var(--red);padding:80px;text-align:center;">
+  <p class="section-eyebrow" style="color:rgba(255,255,255,0.6);">Let's Connect</p>
+  <h2 class="serif" style="color:#fff;font-size:58px;font-weight:300;margin-bottom:20px;">Ready to get <em>started?</em></h2>
+  <p style="color:rgba(255,255,255,0.75);font-size:17px;line-height:1.7;max-width:520px;margin:0 auto 40px;">No pressure, no rush — just a friendly conversation about your goals.</p>
+  <div style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap;">
+    <a href="emily-contact.html" style="background:#fff;color:var(--red);padding:16px 40px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;">Get in Touch →</a>
+    <a href="emily-listings.html" class="btn-outline">Search Homes</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="brand-name">♥ Emily Chaney</div>
+      <p>Denver real estate with heart. 20+ years helping buyers and sellers navigate Colorado's market — from first home to forever home.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/EmilyChaneyRealtor/" target="_blank">f</a>
+        <a href="https://www.instagram.com/emheartsdenver/" target="_blank">◎</a>
+        <a href="https://www.tiktok.com/@emilygoldievalentine" target="_blank">♪</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="emily-listings.html">Listings</a></li>
+        <li><a href="emily-meet-emily.html">Meet Emily</a></li>
+        <li><a href="emily-buyers.html">For Buyers</a></li>
+        <li><a href="emily-sellers.html">For Sellers</a></li>
+        <li><a href="emily-contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Neighborhoods</h4>
+      <ul>
+        <li><a href="emily-neighborhoods.html#cherry-creek">Cherry Creek</a></li>
+        <li><a href="emily-neighborhoods.html#washington-park">Washington Park</a></li>
+        <li><a href="emily-neighborhoods.html#lohi">LoHi</a></li>
+        <li><a href="emily-neighborhoods.html#highlands">Highlands</a></li>
+        <li><a href="emily-neighborhoods.html#rino">RiNo</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="emily-buyers.html">Buyer's Guide</a></li>
+        <li><a href="emily-sellers.html">Seller's Guide</a></li>
+        <li><a href="emily-listings.html">Search Homes</a></li>
+        <li><a href="emily-contact.html">Home Valuation</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Emily Chaney · iheartdenverhomes.com · All rights reserved.</p>
+    <div class="footer-mhm"><span>MHM Homes</span><span>·</span><span>Equal Housing Opportunity</span></div>
+  </div>
+</footer>
+
+</body>
+</html>

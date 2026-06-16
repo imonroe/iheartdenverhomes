@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Listings | Emily Chaney Denver Real Estate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    .filter-bar { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 48px; }
+    .filter-btn { font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; padding: 10px 20px; border: 1.5px solid var(--sand); background: none; cursor: pointer; transition: all .2s; color: var(--mid); }
+    .filter-btn:hover, .filter-btn.active { background: var(--red); border-color: var(--red); color: #fff; }
+    .listings-full { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .listing-full-card { background: var(--cream); overflow: hidden; transition: transform .3s; cursor: pointer; }
+    .listing-full-card:hover { transform: translateY(-4px); }
+    .listing-full-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+    .listing-full-body { padding: 24px; }
+    .listing-full-status { font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; padding: 3px 10px; display: inline-block; margin-bottom: 10px; }
+    .status-active { background: var(--red); color: #fff; }
+    .status-pending { background: var(--gold); color: #fff; }
+    .status-sold { background: var(--dark); color: #fff; }
+    .listing-full-address { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; margin-bottom: 6px; }
+    .listing-full-neighborhood { font-size: 12px; color: var(--light); font-weight: 500; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 12px; }
+    .listing-full-price { font-size: 20px; font-weight: 600; color: var(--dark); margin-bottom: 8px; }
+    .listing-full-meta { font-size: 13px; color: var(--mid); }
+    .listing-full-meta span { margin-right: 16px; }
+    @media (max-width: 1024px) { .listings-full { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .listings-full { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="emily-chaney-website-redesign.html" class="nav-logo"><span class="heart">♥</span><span class="brand">Emily Chaney</span></a>
+  <ul class="nav-links">
+    <li><a href="emily-listings.html" class="active">Listings</a></li>
+    <li><a href="emily-meet-emily.html">About</a></li>
+    <li><a href="emily-buyers.html">Buyers</a></li>
+    <li><a href="emily-sellers.html">Sellers</a></li>
+    <li><a href="emily-neighborhoods.html">Neighborhoods</a></li>
+  </ul>
+  <a href="emily-contact.html" class="nav-cta">Get in Touch</a>
+</nav>
+
+<div class="page-hero">
+  <p class="section-eyebrow">Properties</p>
+  <h1>Current Listings<br />&amp; <em>Recent Sales</em></h1>
+  <p>Active listings, pending sales, and recent closings across Denver and surrounding neighborhoods.</p>
+</div>
+
+<section class="section">
+  <div class="filter-bar">
+    <button class="filter-btn active">All</button>
+    <button class="filter-btn">Active</button>
+    <button class="filter-btn">Just Sold</button>
+    <button class="filter-btn">Denver</button>
+    <button class="filter-btn">Highlands / LoHi</button>
+    <button class="filter-btn">Wash Park</button>
+    <button class="filter-btn">Lakewood</button>
+    <button class="filter-btn">Wheat Ridge</button>
+  </div>
+  <div class="listings-full">
+    <!-- Active listings -->
+    <div class="listing-full-card">
+      <div style="aspect-ratio:4/3;background:linear-gradient(135deg,#8B7355,#C4A882);display:flex;align-items:center;justify-content:center;"><span style="color:rgba(255,255,255,0.5);font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;">Centennial</span></div>
+      <div class="listing-full-body">
+        <span class="listing-full-status status-active">Active</span>
+        <div class="listing-full-address">6928 S Columbine Way</div>
+        <div class="listing-full-neighborhood">Centennial, CO 80122</div>
+        <div class="listing-full-price">$825,000</div>
+        <div class="listing-full-meta"><span>4 bd</span><span>3 ba</span><span>2,607 sqft</span></div>
+      </div>
+    </div>
+    <div class="listing-full-card">
+      <div style="aspect-ratio:4/3;background:linear-gradient(135deg,#5A4A6B,#8870A0);display:flex;align-items:center;justify-content:center;"><span style="color:rgba(255,255,255,0.5);font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;">Denver · Cole</span></div>
+      <div class="listing-full-body">
+        <span class="listing-full-status status-active">Active</span>
+        <div class="listing-full-address">3733 N Franklin Street</div>
+        <div class="listing-full-neighborhood">Denver, CO 80205</div>
+        <div class="listing-full-price">$750,000</div>
+        <div class="listing-full-meta"><span>3 bd</span><span>3 ba</span><span>1,682 sqft</span></div>
+      </div>
+    </div>
+    <div class="listing-full-card">
+      <div style="aspect-ratio:4/3;background:linear-gradient(135deg,#4A6741,#7A9870);display:flex;align-items:center;justify-content:center;"><span style="color:rgba(255,255,255,0.5);font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;">Aurora</span></div>
+      <div class="listing-full-body">
+        <span class="listing-full-status status-active">Active</span>
+        <div class="listing-full-address">2645 S Xanadu Way #B</div>
+        <div class="listing-full-neighborhood">Aurora, CO 80014</div>
+        <div class="listing-full-price">$360,000</div>
+        <div class="listing-full-meta"><span>2 bd</span><span>2 ba</span><span>1,314 sqft</span></div>
+      </div>
+    </div>
+    <!-- Recent Sales -->
+    <div class="listing-full-card">
+      <div style="aspect-ratio:4/3;background:linear-gradient(135deg,#4A5568,#718096);display:flex;align-items:center;justify-content:center;"><span style="color:rgba(255,255,255,0.5);font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;">Highlands · LoHi</span></div>
+      <div class="listing-full-body">
+        <span class="listing-full-status status-sold">Just Sold</span>
+        <div class="listing-full-address">2472 W Argyle Place</div>
+        <div class="listing-full-neighborhood">Denver, CO 80211</div>
+        <div class="listing-full-price">$1,435,000</div>
+        <div class="listing-full-meta"><span>Denver · Highlands</span></div>
+      </div>
+    </div>
+    <div class="listing-full-card">
+      <div style="aspect-ratio:4/3;background:linear-gradient(135deg,#4A6B7A,#7098A8);display:flex;align-items:center;justify-content:center;"><span style="color:rgba(255,255,255,0.5);font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;">Park Hill</span></div>
+      <div class="listing-full-body">
+        <span class="listing-full-status status-sold">Just Sold</span>
+        <div class="listing-full-address">2200 Locust Street</div>
+        <div class="listing-full-neighborhood">Denver, CO 80207</div>
+        <div class="listing-full-price">$1,275,000</div>
+        <div class="listing-full-meta"><span>4 bd</span><span>3 ba</span><span>2,865 sqft</span></div>
+      </div>
+    </div>
+    <div class="listing-full-card">
+      <div style="aspect-ratio:4/3;background:linear-gradient(135deg,#6B5E4A,#A09070);display:flex;align-items:center;justify-content:center;"><span style="color:rgba(255,255,255,0.5);font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;">Wash Park</span></div>
+      <div class="listing-full-body">
+        <span class="listing-full-status status-sold">Just Sold</span>
+        <div class="listing-full-address">1968 S Clarkson Street</div>
+        <div class="listing-full-neighborhood">Denver, CO 80210</div>
+        <div class="listing-full-price">$1,120,000</div>
+        <div class="listing-full-meta"><span>3 bd</span><span>4 ba</span><span>3,240 sqft</span></div>
+      </div>
+    </div>
+    <div class="listing-full-card">
+      <div style="aspect-ratio:4/3;background:linear-gradient(135deg,#5A6B4A,#8AA070);display:flex;align-items:center;justify-content:center;"><span style="color:rgba(255,255,255,0.5);font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;">Cherry Creek</span></div>
+      <div class="listing-full-body">
+        <span class="listing-full-status status-sold">Just Sold</span>
+        <div class="listing-full-address">463 S Washington Street</div>
+        <div class="listing-full-neighborhood">Denver, CO 80209</div>
+        <div class="listing-full-price">$1,200,000</div>
+        <div class="listing-full-meta"><span>4 bd</span><span>3 ba</span><span>2,557 sqft</span></div>
+      </div>
+    </div>
+    <div class="listing-full-card">
+      <div style="aspect-ratio:4/3;background:linear-gradient(135deg,#6B4A5A,#9870A8);display:flex;align-items:center;justify-content:center;"><span style="color:rgba(255,255,255,0.5);font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;">LoHi</span></div>
+      <div class="listing-full-body">
+        <span class="listing-full-status status-sold">Just Sold</span>
+        <div class="listing-full-address">2535 N Hooker Street</div>
+        <div class="listing-full-neighborhood">Denver, CO 80211</div>
+        <div class="listing-full-price">$1,035,000</div>
+        <div class="listing-full-meta"><span>4 bd</span><span>2 ba</span><span>1,939 sqft</span></div>
+      </div>
+    </div>
+    <div class="listing-full-card">
+      <div style="aspect-ratio:4/3;background:linear-gradient(135deg,#4A5A6B,#7080A8);display:flex;align-items:center;justify-content:center;"><span style="color:rgba(255,255,255,0.5);font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;">Lakewood</span></div>
+      <div class="listing-full-body">
+        <span class="listing-full-status status-sold">Just Sold</span>
+        <div class="listing-full-address">12034 W Auburn Drive</div>
+        <div class="listing-full-neighborhood">Lakewood, CO 80228</div>
+        <div class="listing-full-price">$1,101,900</div>
+        <div class="listing-full-meta"><span>4 bd</span><span>4 ba</span><span>3,181 sqft</span></div>
+      </div>
+    </div>
+    <div class="listing-full-card">
+      <div style="aspect-ratio:4/3;background:linear-gradient(135deg,#6B5A4A,#A08870);display:flex;align-items:center;justify-content:center;"><span style="color:rgba(255,255,255,0.5);font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;">Wheat Ridge</span></div>
+      <div class="listing-full-body">
+        <span class="listing-full-status status-sold">Just Sold</span>
+        <div class="listing-full-address">6730 W 36th Place</div>
+        <div class="listing-full-neighborhood">Wheat Ridge, CO 80033</div>
+        <div class="listing-full-price">$695,000</div>
+        <div class="listing-full-meta"><span>5 bd</span><span>3 ba</span><span>2,126 sqft</span></div>
+      </div>
+    </div>
+    <div class="listing-full-card">
+      <div style="aspect-ratio:4/3;background:linear-gradient(135deg,#4A6B5A,#70A888);display:flex;align-items:center;justify-content:center;"><span style="color:rgba(255,255,255,0.5);font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;">Wheat Ridge</span></div>
+      <div class="listing-full-body">
+        <span class="listing-full-status status-sold">Just Sold</span>
+        <div class="listing-full-address">4745 Garland Street</div>
+        <div class="listing-full-neighborhood">Wheat Ridge, CO 80033</div>
+        <div class="listing-full-price">$675,000</div>
+        <div class="listing-full-meta"><span>6 bd</span><span>3 ba</span><span>2,650 sqft</span></div>
+      </div>
+    </div>
+    <div class="listing-full-card">
+      <div style="aspect-ratio:4/3;background:linear-gradient(135deg,#5A4A4A,#8A6868);display:flex;align-items:center;justify-content:center;"><span style="color:rgba(255,255,255,0.5);font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;">Lakewood</span></div>
+      <div class="listing-full-body">
+        <span class="listing-full-status status-sold">Just Sold</span>
+        <div class="listing-full-address">11734 W Applewood Knolls Dr</div>
+        <div class="listing-full-neighborhood">Lakewood, CO 80215</div>
+        <div class="listing-full-price">$1,043,500</div>
+        <div class="listing-full-meta"><span>3 bd</span><span>3 ba</span><span>2,356 sqft</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:56px;padding:48px;background:var(--cream);">
+    <p class="section-eyebrow">MLS Search</p>
+    <h2 class="serif" style="font-size:40px;font-weight:300;margin-bottom:16px;">Search <em>all Denver homes</em></h2>
+    <p style="font-size:15px;color:var(--mid);margin-bottom:32px;">Looking for something specific? Search the full MLS for all active Denver listings.</p>
+    <a href="https://www.mhmhomes.com/agent-detail/75943/emily-chaney/" target="_blank" class="btn-primary">Search Full MLS →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand"><div class="brand-name">♥ Emily Chaney</div><p>Denver real estate with heart. 20+ years helping buyers and sellers navigate Colorado's market.</p><div class="footer-social"><a href="https://www.facebook.com/EmilyChaneyRealtor/" target="_blank">f</a><a href="https://www.instagram.com/emheartsdenver/" target="_blank">◎</a><a href="https://www.tiktok.com/@emilygoldievalentine" target="_blank">♪</a></div></div>
+    <div class="footer-col"><h4>Navigate</h4><ul><li><a href="emily-listings.html">Listings</a></li><li><a href="emily-meet-emily.html">Meet Emily</a></li><li><a href="emily-buyers.html">For Buyers</a></li><li><a href="emily-sellers.html">For Sellers</a></li><li><a href="emily-contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Neighborhoods</h4><ul><li><a href="emily-neighborhoods.html#cherry-creek">Cherry Creek</a></li><li><a href="emily-neighborhoods.html#washington-park">Washington Park</a></li><li><a href="emily-neighborhoods.html#lohi">LoHi</a></li><li><a href="emily-neighborhoods.html#highlands">Highlands</a></li><li><a href="emily-neighborhoods.html#rino">RiNo</a></li></ul></div>
+    <div class="footer-col"><h4>Resources</h4><ul><li><a href="emily-buyers.html">Buyer's Guide</a></li><li><a href="emily-sellers.html">Seller's Guide</a></li><li><a href="emily-listings.html">Search Homes</a></li><li><a href="emily-contact.html">Home Valuation</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 Emily Chaney · iheartdenverhomes.com</p><div class="footer-mhm"><span>MHM Homes</span><span>·</span><span>Equal Housing Opportunity</span></div></div>
+</footer>
+</body>
+</html>

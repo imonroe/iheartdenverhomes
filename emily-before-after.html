@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Before &amp; After | Emily Chaney Denver Real Estate</title>
+  <meta name="description" content="See the transformation. Emily Chaney's staging and preparation results across Denver homes — before and after listing." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    .ba-intro { max-width: 640px; }
+
+    /* BEFORE/AFTER CARD */
+    .ba-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 48px; margin-top: 64px; }
+    .ba-card { }
+    .ba-card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+    .ba-address { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400; color: var(--dark); }
+    .ba-neighborhood { font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--light); margin-top: 4px; }
+    .ba-sold-price { font-size: 13px; font-weight: 600; color: var(--red); letter-spacing: .06em; }
+
+    .ba-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+    .ba-panel { position: relative; }
+    .ba-label { position: absolute; top: 12px; left: 12px; font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; padding: 4px 10px; z-index: 2; }
+    .ba-label.before { background: var(--dark); color: rgba(255,255,255,0.75); }
+    .ba-label.after  { background: var(--red);  color: #fff; }
+    .ba-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+    .ba-placeholder { width: 100%; aspect-ratio: 4/3; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
+    .ba-placeholder.before-ph { background: #E8E0D4; }
+    .ba-placeholder.after-ph  { background: var(--cream); border: 1.5px dashed var(--sand); }
+    .ba-placeholder-icon { font-size: 28px; opacity: 0.3; }
+    .ba-placeholder-text { font-size: 11px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--light); }
+
+    .ba-result { margin-top: 16px; display: flex; gap: 24px; align-items: center; padding: 16px 20px; background: var(--cream); }
+    .ba-result-item { }
+    .ba-result-val { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 300; color: var(--dark); line-height: 1; }
+    .ba-result-val em { color: var(--red); font-style: normal; }
+    .ba-result-label { font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--light); margin-top: 3px; }
+    .ba-result-divider { width: 1px; background: var(--sand); align-self: stretch; }
+    .ba-result-quote { font-size: 13px; color: var(--mid); line-height: 1.6; font-style: italic; flex: 1; }
+
+    /* FULL-WIDTH FEATURE */
+    .ba-feature { margin-top: 72px; }
+    .ba-feature-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+    .ba-feature-panel { position: relative; }
+    .ba-feature-img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; }
+    .ba-feature-placeholder { width: 100%; aspect-ratio: 16/9; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; }
+    .ba-feature-placeholder.before-ph { background: #E8E0D4; }
+    .ba-feature-placeholder.after-ph  { background: var(--cream); border: 1.5px dashed var(--sand); }
+
+    .ba-process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 80px; }
+    .ba-step { background: var(--cream); padding: 40px 32px; border-bottom: 3px solid transparent; transition: border-color .3s; }
+    .ba-step:hover { border-color: var(--red); }
+    .ba-step-num { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; color: var(--red); line-height: 1; margin-bottom: 12px; }
+    .ba-step-title { font-size: 18px; font-family: 'Cormorant Garamond', serif; font-weight: 400; color: var(--dark); margin-bottom: 8px; }
+    .ba-step-desc { font-size: 13px; color: var(--mid); line-height: 1.65; }
+
+    .add-photos-banner { background: var(--dark); padding: 48px 64px; display: flex; align-items: center; justify-content: space-between; gap: 32px; margin-top: 64px; }
+    .add-photos-banner h3 { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; color: #fff; }
+    .add-photos-banner p { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.65; margin-top: 8px; max-width: 400px; }
+
+    @media (max-width: 1024px) {
+      .ba-grid { grid-template-columns: 1fr; }
+      .ba-process { grid-template-columns: repeat(2, 1fr); }
+      .add-photos-banner { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 600px) {
+      .ba-panels { grid-template-columns: 1fr; }
+      .ba-feature-panels { grid-template-columns: 1fr; }
+      .ba-process { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="emily-chaney-website-redesign.html" class="nav-logo"><span class="heart">♥</span><span class="brand">Emily Chaney</span></a>
+  <ul class="nav-links">
+    <li><a href="emily-listings.html">Listings</a></li>
+    <li><a href="emily-meet-emily.html">About</a></li>
+    <li><a href="emily-buyers.html">Buyers</a></li>
+    <li><a href="emily-sellers.html">Sellers</a></li>
+    <li><a href="emily-neighborhoods.html">Neighborhoods</a></li>
+  </ul>
+  <a href="emily-contact.html" class="nav-cta">Get in Touch</a>
+</nav>
+
+<div class="page-hero">
+  <p class="section-eyebrow">Staging &amp; Preparation</p>
+  <h1>Before &amp; After:<br /><em>The Difference It Makes</em></h1>
+  <p>The right preparation turns a house into a home — and a listing into a sale. Here's the proof.</p>
+</div>
+
+<section class="section">
+  <div class="ba-intro">
+    <p class="section-eyebrow">The Emily Chaney Approach</p>
+    <h2 class="section-title">Presentation <em>sells homes.</em></h2>
+    <p class="section-subtitle">Buyers decide in the first 8 seconds. Strategic staging, decluttering, and preparation consistently result in faster sales and higher prices. These are real homes, real transformations.</p>
+  </div>
+
+  <!-- TRANSFORMATION CARDS -->
+  <div class="ba-grid">
+
+    <!-- Card 1 -->
+    <div class="ba-card">
+      <div class="ba-card-header">
+        <div>
+          <div class="ba-address">6730 W 36th Place</div>
+          <div class="ba-neighborhood">Wheat Ridge, CO · Just Sold</div>
+        </div>
+        <div class="ba-sold-price">Sold $695,000</div>
+      </div>
+      <div class="ba-panels">
+        <div class="ba-panel">
+          <span class="ba-label before">Before</span>
+          <!-- Replace with actual before photo: <img src="YOUR-BEFORE-PHOTO.jpg" alt="Before staging" class="ba-img" /> -->
+          <div class="ba-placeholder before-ph">
+            <div class="ba-placeholder-icon">📷</div>
+            <div class="ba-placeholder-text">Before photo</div>
+          </div>
+        </div>
+        <div class="ba-panel">
+          <span class="ba-label after">After</span>
+          <!-- Replace with actual after photo: <img src="YOUR-AFTER-PHOTO.jpg" alt="After staging" class="ba-img" /> -->
+          <div class="ba-placeholder after-ph">
+            <div class="ba-placeholder-icon">✨</div>
+            <div class="ba-placeholder-text">After photo</div>
+          </div>
+        </div>
+      </div>
+      <div class="ba-result">
+        <div class="ba-result-item">
+          <div class="ba-result-val"><em>5</em> days</div>
+          <div class="ba-result-label">On Market</div>
+        </div>
+        <div class="ba-result-divider"></div>
+        <div class="ba-result-item">
+          <div class="ba-result-val"><em>Over</em> ask</div>
+          <div class="ba-result-label">Final Price</div>
+        </div>
+        <div class="ba-result-divider"></div>
+        <div class="ba-result-quote">"Emily knew exactly what buyers needed to see. The transformation was stunning."</div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="ba-card">
+      <div class="ba-card-header">
+        <div>
+          <div class="ba-address">4745 Garland Street</div>
+          <div class="ba-neighborhood">Wheat Ridge, CO · Just Sold</div>
+        </div>
+        <div class="ba-sold-price">Sold $675,000</div>
+      </div>
+      <div class="ba-panels">
+        <div class="ba-panel">
+          <span class="ba-label before">Before</span>
+          <div class="ba-placeholder before-ph">
+            <div class="ba-placeholder-icon">📷</div>
+            <div class="ba-placeholder-text">Before photo</div>
+          </div>
+        </div>
+        <div class="ba-panel">
+          <span class="ba-label after">After</span>
+          <div class="ba-placeholder after-ph">
+            <div class="ba-placeholder-icon">✨</div>
+            <div class="ba-placeholder-text">After photo</div>
+          </div>
+        </div>
+      </div>
+      <div class="ba-result">
+        <div class="ba-result-item">
+          <div class="ba-result-val"><em>8</em> days</div>
+          <div class="ba-result-label">On Market</div>
+        </div>
+        <div class="ba-result-divider"></div>
+        <div class="ba-result-item">
+          <div class="ba-result-val"><em>3</em> offers</div>
+          <div class="ba-result-label">Received</div>
+        </div>
+        <div class="ba-result-divider"></div>
+        <div class="ba-result-quote">"We didn't think our house would photograph this well. Emily proved us wrong."</div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="ba-card">
+      <div class="ba-card-header">
+        <div>
+          <div class="ba-address">2472 W Argyle Place</div>
+          <div class="ba-neighborhood">Highlands, Denver · Just Sold</div>
+        </div>
+        <div class="ba-sold-price">Sold $1,435,000</div>
+      </div>
+      <div class="ba-panels">
+        <div class="ba-panel">
+          <span class="ba-label before">Before</span>
+          <div class="ba-placeholder before-ph">
+            <div class="ba-placeholder-icon">📷</div>
+            <div class="ba-placeholder-text">Before photo</div>
+          </div>
+        </div>
+        <div class="ba-panel">
+          <span class="ba-label after">After</span>
+          <div class="ba-placeholder after-ph">
+            <div class="ba-placeholder-icon">✨</div>
+            <div class="ba-placeholder-text">After photo</div>
+          </div>
+        </div>
+      </div>
+      <div class="ba-result">
+        <div class="ba-result-item">
+          <div class="ba-result-val"><em>$1.43M</em></div>
+          <div class="ba-result-label">Sale Price</div>
+        </div>
+        <div class="ba-result-divider"></div>
+        <div class="ba-result-item">
+          <div class="ba-result-val"><em>Top</em> dollar</div>
+          <div class="ba-result-label">Result</div>
+        </div>
+        <div class="ba-result-divider"></div>
+        <div class="ba-result-quote">"The staging investment paid for itself many times over. Couldn't be happier."</div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="ba-card">
+      <div class="ba-card-header">
+        <div>
+          <div class="ba-address">1968 S Clarkson Street</div>
+          <div class="ba-neighborhood">Washington Park, Denver · Just Sold</div>
+        </div>
+        <div class="ba-sold-price">Sold $1,120,000</div>
+      </div>
+      <div class="ba-panels">
+        <div class="ba-panel">
+          <span class="ba-label before">Before</span>
+          <div class="ba-placeholder before-ph">
+            <div class="ba-placeholder-icon">📷</div>
+            <div class="ba-placeholder-text">Before photo</div>
+          </div>
+        </div>
+        <div class="ba-panel">
+          <span class="ba-label after">After</span>
+          <div class="ba-placeholder after-ph">
+            <div class="ba-placeholder-icon">✨</div>
+            <div class="ba-placeholder-text">After photo</div>
+          </div>
+        </div>
+      </div>
+      <div class="ba-result">
+        <div class="ba-result-item">
+          <div class="ba-result-val"><em>$1.12M</em></div>
+          <div class="ba-result-label">Sale Price</div>
+        </div>
+        <div class="ba-result-divider"></div>
+        <div class="ba-result-item">
+          <div class="ba-result-val"><em>Wash Park</em></div>
+          <div class="ba-result-label">Neighborhood</div>
+        </div>
+        <div class="ba-result-divider"></div>
+        <div class="ba-result-quote">"Emily's eye for what matters made all the difference in our final price."</div>
+      </div>
+    </div>
+
+  </div><!-- /.ba-grid -->
+
+  <!-- ADD YOUR PHOTOS BANNER -->
+  <div class="add-photos-banner">
+    <div>
+      <h3>Got before &amp; after photos?</h3>
+      <p>Drop them in the site folder and they'll replace the placeholders above. Name them with the property address for easy matching.</p>
+    </div>
+    <a href="emily-contact.html" style="background:var(--red);color:#fff;padding:14px 32px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;display:inline-block;white-space:nowrap;">See My Results →</a>
+  </div>
+
+</section>
+
+<!-- THE PROCESS -->
+<section class="section section-alt">
+  <div class="section-header">
+    <p class="section-eyebrow">How It Works</p>
+    <h2 class="section-title">From listed to <em>sold</em> — the process.</h2>
+    <p class="section-subtitle">Every home I list goes through a preparation process designed to maximize your return.</p>
+  </div>
+  <div class="ba-process">
+    <div class="ba-step">
+      <div class="ba-step-num">01</div>
+      <div class="ba-step-title">Walk &amp; Assess</div>
+      <div class="ba-step-desc">We walk through the home together and I identify what buyers will focus on — and what we can do to influence their reaction.</div>
+    </div>
+    <div class="ba-step">
+      <div class="ba-step-num">02</div>
+      <div class="ba-step-title">Prep &amp; Stage</div>
+      <div class="ba-step-desc">From decluttering and touch-up painting to full staging, we get the home looking its absolute best before a single photo is taken.</div>
+    </div>
+    <div class="ba-step">
+      <div class="ba-step-num">03</div>
+      <div class="ba-step-title">Professional Photos</div>
+      <div class="ba-step-desc">Every listing gets professional photography. The first showing happens online — and your photos need to stop the scroll.</div>
+    </div>
+    <div class="ba-step">
+      <div class="ba-step-num">04</div>
+      <div class="ba-step-title">Strategic Launch</div>
+      <div class="ba-step-desc">We time and price the listing to generate maximum activity in the first weekend — when offers are strongest and competition is fiercest.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background:var(--red);padding:72px 80px;text-align:center;">
+  <p class="section-eyebrow" style="color:rgba(255,255,255,0.6);">Thinking about selling?</p>
+  <h2 class="serif" style="color:#fff;font-size:52px;font-weight:300;margin-bottom:16px;">Let's talk about your <em>home's potential.</em></h2>
+  <p style="color:rgba(255,255,255,0.75);font-size:16px;margin-bottom:36px;max-width:500px;margin-left:auto;margin-right:auto;">Free consultation. No pressure. Just an honest conversation about what your home could sell for — and what it takes to get there.</p>
+  <a href="emily-contact.html" style="background:#fff;color:var(--red);padding:16px 40px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;display:inline-block;">Get a Free Home Valuation →</a>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand"><div class="brand-name">♥ Emily Chaney</div><p>Denver real estate with heart. 20+ years helping buyers and sellers navigate Colorado's market.</p><div class="footer-social"><a href="https://www.facebook.com/EmilyChaneyRealtor/" target="_blank">f</a><a href="https://www.instagram.com/emheartsdenver/" target="_blank">◎</a><a href="https://www.tiktok.com/@emilygoldievalentine" target="_blank">♪</a></div></div>
+    <div class="footer-col"><h4>Navigate</h4><ul><li><a href="emily-listings.html">Listings</a></li><li><a href="emily-meet-emily.html">Meet Emily</a></li><li><a href="emily-buyers.html">For Buyers</a></li><li><a href="emily-sellers.html">For Sellers</a></li><li><a href="emily-before-after.html" class="active">Before &amp; After</a></li><li><a href="emily-contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Neighborhoods</h4><ul><li><a href="emily-neighborhoods.html#cherry-creek">Cherry Creek</a></li><li><a href="emily-neighborhoods.html#washington-park">Washington Park</a></li><li><a href="emily-neighborhoods.html#lohi">LoHi</a></li><li><a href="emily-neighborhoods.html#highlands">Highlands</a></li><li><a href="emily-neighborhoods.html#wheat-ridge">Wheat Ridge</a></li></ul></div>
+    <div class="footer-col"><h4>Resources</h4><ul><li><a href="emily-buyers.html">Buyer's Guide</a></li><li><a href="emily-sellers.html">Seller's Guide</a></li><li><a href="emily-the-looks.html">The Looks</a></li><li><a href="emily-northwest-denver-guide.html">NW Denver Guide</a></li><li><a href="emily-contact.html">Home Valuation</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 Emily Chaney · iheartdenverhomes.com</p><div class="footer-mhm"><span>MHM Homes</span><span>·</span><span>Equal Housing Opportunity</span></div></div>
+</footer>
+</body>
+</html>

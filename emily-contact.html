@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Emily Chaney Denver Real Estate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    .contact-layout { display: grid; grid-template-columns: 5fr 7fr; min-height: calc(100vh - 88px); }
+    .contact-left { background: var(--red); padding: 80px 64px; display: flex; flex-direction: column; justify-content: center; }
+    .contact-left h1 { color: #fff; font-size: clamp(48px, 4.5vw, 70px); font-weight: 300; margin-bottom: 20px; }
+    .contact-left h1 em { font-style: italic; }
+    .contact-left > p { color: rgba(255,255,255,0.75); font-size: 16px; line-height: 1.75; margin-bottom: 40px; }
+    .contact-info-item { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 20px; color: rgba(255,255,255,0.8); font-size: 14px; }
+    .ci-icon { font-size: 18px; opacity: .7; margin-top: 1px; min-width: 20px; }
+    .contact-divider { border: none; border-top: 1px solid rgba(255,255,255,0.15); margin: 36px 0; }
+    .contact-social { display: flex; gap: 12px; margin-top: 8px; }
+    .contact-social a { width: 40px; height: 40px; border: 1px solid rgba(255,255,255,0.25); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.6); font-size: 14px; transition: all .2s; }
+    .contact-social a:hover { background: rgba(255,255,255,0.15); color: #fff; }
+    .contact-right { background: var(--cream); padding: 80px 72px; display: flex; flex-direction: column; justify-content: center; }
+    .contact-right h2 { font-size: 40px; font-weight: 300; margin-bottom: 8px; }
+    .contact-right > p { font-size: 14px; color: var(--mid); margin-bottom: 40px; }
+    @media (max-width: 900px) {
+      .contact-layout { grid-template-columns: 1fr; }
+      .contact-left { padding: 60px 40px; }
+      .contact-right { padding: 60px 40px; }
+    }
+    @media (max-width: 600px) {
+      .contact-left { padding: 48px 24px; }
+      .contact-right { padding: 48px 24px; }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="emily-chaney-website-redesign.html" class="nav-logo"><span class="heart">♥</span><span class="brand">Emily Chaney</span></a>
+  <ul class="nav-links">
+    <li><a href="emily-listings.html">Listings</a></li>
+    <li><a href="emily-meet-emily.html">About</a></li>
+    <li><a href="emily-buyers.html">Buyers</a></li>
+    <li><a href="emily-sellers.html">Sellers</a></li>
+    <li><a href="emily-neighborhoods.html">Neighborhoods</a></li>
+  </ul>
+  <a href="emily-contact.html" class="nav-cta active" style="background:#830a21;">Get in Touch</a>
+</nav>
+
+<div class="contact-layout" style="padding-top:88px;">
+  <div class="contact-left">
+    <p class="section-eyebrow" style="color:rgba(255,255,255,0.6);">Let's Connect</p>
+    <h1 class="serif">Ready to<br /><em>get started?</em></h1>
+    <p>Whether you're buying, selling, or just exploring your options — I'd love to talk. No pressure, no sales pitch. Just a real conversation about your goals.</p>
+    <div style="margin-bottom:28px;overflow:hidden;"><img src="emily-phone-kitchen.jpg" alt="Emily Chaney" style="width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center top;display:block;" /></div>
+    <div class="contact-info-item"><span class="ci-icon">✉</span><span><a href="mailto:emily@hello303.com" style="color:rgba(255,255,255,0.85);">emily@hello303.com</a></span></div>
+    <div class="contact-info-item"><span class="ci-icon">⌂</span><span style="color:rgba(255,255,255,0.8);">MHM Homes · Denver, CO</span></div>
+    <hr class="contact-divider" />
+    <p style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:16px;">Follow Along</p>
+    <div class="contact-social">
+      <a href="https://www.facebook.com/EmilyChaneyRealtor/" target="_blank" title="Facebook">f</a>
+      <a href="https://www.instagram.com/emheartsdenver/" target="_blank" title="Instagram">◎</a>
+      <a href="https://www.tiktok.com/@emilygoldievalentine" target="_blank" title="TikTok">♪</a>
+    </div>
+    <hr class="contact-divider" />
+    <div style="display:flex;flex-direction:column;gap:12px;">
+      <a href="emily-listings.html" style="color:rgba(255,255,255,0.7);font-size:13px;font-weight:500;display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.1);">Browse listings <span>→</span></a>
+      <a href="emily-neighborhoods.html" style="color:rgba(255,255,255,0.7);font-size:13px;font-weight:500;display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.1);">Explore neighborhoods <span>→</span></a>
+      <a href="emily-meet-emily.html" style="color:rgba(255,255,255,0.7);font-size:13px;font-weight:500;display:flex;justify-content:space-between;align-items:center;padding:10px 0;">Meet Emily <span>→</span></a>
+    </div>
+  </div>
+
+  <div class="contact-right">
+    <h2 class="serif">Tell me about<br />your goals.</h2>
+    <p>Fill out the form and I'll be in touch within one business day.</p>
+    <form>
+      <div class="form-row">
+        <div class="form-group"><label>First Name</label><input type="text" placeholder="Jane" /></div>
+        <div class="form-group"><label>Last Name</label><input type="text" placeholder="Smith" /></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>Email</label><input type="email" placeholder="jane@email.com" /></div>
+        <div class="form-group"><label>Phone</label><input type="tel" placeholder="(303) 000-0000" /></div>
+      </div>
+      <div class="form-group">
+        <label>I'm looking to…</label>
+        <select>
+          <option value="">Select one</option>
+          <option>Buy a home</option>
+          <option>Sell my home</option>
+          <option>Buy & Sell</option>
+          <option>Get a home valuation</option>
+          <option>Just exploring</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Neighborhood Interest</label>
+          <select>
+            <option value="">Any / Not sure yet</option>
+            <option>Cherry Creek</option>
+            <option>Washington Park</option>
+            <option>LoHi</option>
+            <option>Highlands</option>
+            <option>Congress Park</option>
+            <option>RiNo</option>
+            <option>Other / Open</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Timeline</label>
+          <select>
+            <option value="">Select</option>
+            <option>ASAP</option>
+            <option>Within 3 months</option>
+            <option>3–6 months</option>
+            <option>6+ months</option>
+            <option>Just researching</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Tell me more</label>
+        <textarea placeholder="Neighborhoods you love, budget range, timeline, or anything else that helps me understand what you're looking for."></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send Message — Let's Talk ♥</button>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand"><div class="brand-name">♥ Emily Chaney</div><p>Denver real estate with heart. 20+ years helping buyers and sellers navigate Colorado's market.</p><div class="footer-social"><a href="https://www.facebook.com/EmilyChaneyRealtor/" target="_blank">f</a><a href="https://www.instagram.com/emheartsdenver/" target="_blank">◎</a><a href="https://www.tiktok.com/@emilygoldievalentine" target="_blank">♪</a></div></div>
+    <div class="footer-col"><h4>Navigate</h4><ul><li><a href="emily-listings.html">Listings</a></li><li><a href="emily-meet-emily.html">Meet Emily</a></li><li><a href="emily-buyers.html">For Buyers</a></li><li><a href="emily-sellers.html">For Sellers</a></li><li><a href="emily-the-looks.html">The Looks</a></li><li><a href="emily-contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Neighborhoods</h4><ul><li><a href="emily-neighborhoods.html#cherry-creek">Cherry Creek</a></li><li><a href="emily-neighborhoods.html#washington-park">Washington Park</a></li><li><a href="emily-neighborhoods.html#lohi">LoHi</a></li><li><a href="emily-neighborhoods.html#highlands">Highlands</a></li><li><a href="emily-neighborhoods.html#wheat-ridge">Wheat Ridge</a></li></ul></div>
+    <div class="footer-col"><h4>Resources</h4><ul><li><a href="emily-buyers.html">Buyer's Guide</a></li><li><a href="emily-sellers.html">Seller's Guide</a></li><li><a href="emily-the-looks.html">The Looks</a></li><li><a href="emily-northwest-denver-guide.html">NW Denver Guide</a></li><li><a href="emily-contact.html">Home Valuation</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 Emily Chaney · iheartdenverhomes.com</p><div class="footer-mhm"><span>MHM Homes</span><span>·</span><span>Equal Housing Opportunity</span></div></div>
+</footer>
+</body>
+</html>
