@@ -189,6 +189,7 @@ export default function ListingsPage() {
           {filters.map((label, i) => (
             <button
               key={label}
+              type="button"
               style={{
                 padding: "10px 22px",
                 fontSize: 12,

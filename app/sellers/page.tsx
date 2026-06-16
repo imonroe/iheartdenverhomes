@@ -10,7 +10,7 @@ export default function SellersPage() {
     { num: "01", title: "Pricing Strategy", desc: "I analyze recent sales, current inventory, and market trends to pinpoint the price that attracts the most qualified buyers and maximizes your return." },
     { num: "02", title: "Prep & Staging", desc: "From decluttering tips to professional staging, I help you showcase your home so buyers can see themselves living there from the moment they walk in." },
     { num: "03", title: "Professional Marketing", desc: "High-end photography, video tours, targeted digital ads, and exposure across the top listing platforms — your home gets the attention it deserves." },
-    { num: "04", title: "Showings & Open Houses", desc: "I coordinate and host showings that highlight your home&apos;s best features, creating urgency and excitement among prospective buyers." },
+    { num: "04", title: "Showings & Open Houses", desc: "I coordinate and host showings that highlight your home’s best features, creating urgency and excitement among prospective buyers." },
     { num: "05", title: "Offer Review & Negotiation", desc: "When offers come in, I break down every detail, advise on terms, and negotiate aggressively so you get the strongest deal possible." },
     { num: "06", title: "Smooth Close", desc: "From inspection to appraisal to the closing table, I manage every step so there are no surprises — just a successful sale." },
   ];
@@ -18,8 +18,8 @@ export default function SellersPage() {
   const whyCards = [
     { icon: "📸", title: "Marketing That Moves Homes", desc: "Professional photography, cinematic video, social media strategy, and listing syndication that puts your home in front of the right buyers fast." },
     { icon: "📊", title: "Data-Driven Pricing", desc: "No guesswork. I use real-time market data and comparable sales analysis to price your home where it will generate maximum interest and top-dollar offers." },
-    { icon: "🧠", title: "20+ Years of Market Experience", desc: "I&apos;ve navigated booms, corrections, and everything in between. That experience means you get strategy grounded in real results, not theory." },
-    { icon: "📞", title: "You&apos;ll Always Hear From Me", desc: "Selling your home is stressful enough. I keep you informed at every stage — no ghosting, no runaround, just honest communication." },
+    { icon: "🧠", title: "20+ Years of Market Experience", desc: "I've navigated booms, corrections, and everything in between. That experience means you get strategy grounded in real results, not theory." },
+    { icon: "📞", title: "You'll Always Hear From Me", desc: "Selling your home is stressful enough. I keep you informed at every stage — no ghosting, no runaround, just honest communication." },
   ];
 
   const testimonials = [
@@ -115,7 +115,7 @@ export default function SellersPage() {
             <div key={step.num} className="step-card">
               <span className="step-num">{step.num}</span>
               <h3>{step.title}</h3>
-              <p dangerouslySetInnerHTML={{ __html: step.desc }} />
+              <p>{step.desc}</p>
             </div>
           ))}
         </div>
@@ -132,8 +132,8 @@ export default function SellersPage() {
           {whyCards.map((card) => (
             <div key={card.title} className="why-card">
               <div className="why-icon">{card.icon}</div>
-              <h3 dangerouslySetInnerHTML={{ __html: card.title }} />
-              <p dangerouslySetInnerHTML={{ __html: card.desc }} />
+              <h3>{card.title}</h3>
+              <p>{card.desc}</p>
             </div>
           ))}
         </div>
